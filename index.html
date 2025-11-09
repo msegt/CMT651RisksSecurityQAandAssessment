@@ -1,0 +1,2153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMT651: Risk, Security &amp; Quality Assurance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cardiff-crimson: #A4243B;
+            --dark-charcoal: #2C3E50;
+            --light-grey: #ECF0F1;
+            --white: #FFFFFF;
+            --professional-blue: #3498DB;
+            --border-grey: #BDC3C7;
+            --success-green: #27AE60;
+            --warning-orange: #E67E22;
+        }
+
+        body {
+            font-family: 'Libre Franklin', 'Franklin Gothic Book', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--dark-charcoal);
+            background-color: var(--light-grey);
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--dark-charcoal);
+            margin-bottom: 16px;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark-charcoal);
+            margin-bottom: 12px;
+        }
+
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--dark-charcoal);
+            margin-bottom: 8px;
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--cardiff-crimson);
+            padding: 24px 32px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .module-code {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .module-subtitle {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
+        }
+
+        /* Navigation */
+        .nav-container {
+            background-color: var(--white);
+            border-bottom: 2px solid var(--border-grey);
+            position: sticky;
+            top: 80px;
+            z-index: 99;
+        }
+
+        .nav-tabs {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            overflow-x: auto;
+        }
+
+        .nav-tab {
+            padding: 16px 24px;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark-charcoal);
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .nav-tab:hover {
+            background-color: var(--light-grey);
+            color: var(--cardiff-crimson);
+        }
+
+        .nav-tab.active {
+            color: var(--cardiff-crimson);
+            border-bottom-color: var(--cardiff-crimson);
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 32px auto;
+            padding: 0 32px;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section-intro {
+            background-color: var(--white);
+            padding: 24px;
+            border-radius: 8px;
+            margin-bottom: 32px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-intro p {
+            color: var(--dark-charcoal);
+            margin-bottom: 0;
+        }
+
+        /* Cards */
+        .card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-grey);
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--cardiff-crimson);
+            margin-bottom: 16px;
+        }
+
+        .card ul,
+        .card ol {
+            margin-left: 24px;
+            margin-bottom: 16px;
+        }
+
+        .card li {
+            margin-bottom: 8px;
+        }
+
+        .card ul li:last-child,
+        .card ol li:last-child {
+            margin-bottom: 0;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        /* Expandable Sections */
+        .expandable {
+            background-color: var(--white);
+            border-radius: 8px;
+            margin-bottom: 16px;
+            border: 1px solid var(--border-grey);
+            overflow: hidden;
+        }
+
+        .expandable-header {
+            padding: 16px 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--light-grey);
+            transition: background-color 0.3s ease;
+        }
+
+        .expandable-header:hover {
+            background-color: #dfe4e6;
+        }
+
+        .expandable-title {
+            font-weight: 600;
+            color: var(--dark-charcoal);
+        }
+
+        .expandable-icon {
+            color: var(--cardiff-crimson);
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .expandable.open .expandable-icon {
+            transform: rotate(180deg);
+        }
+
+        .expandable-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .expandable.open .expandable-content {
+            max-height: 3000px;
+        }
+
+        .expandable-body {
+            padding: 24px;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 24px;
+            background-color: var(--white);
+        }
+
+        thead {
+            background-color: var(--cardiff-crimson);
+            color: var(--white);
+        }
+
+        th {
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-grey);
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:hover {
+            background-color: var(--light-grey);
+        }
+
+        /* Callout Boxes */
+        .callout {
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            border-left: 4px solid;
+        }
+
+        .callout-info {
+            background-color: #E3F2FD;
+            border-color: var(--professional-blue);
+        }
+
+        .callout-warning {
+            background-color: #FFF3E0;
+            border-color: var(--warning-orange);
+        }
+
+        .callout-success {
+            background-color: #E8F5E9;
+            border-color: var(--success-green);
+        }
+
+        .callout-error {
+            background-color: #FFEBEE;
+            border-color: var(--cardiff-crimson);
+        }
+
+        .callout-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark-charcoal);
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+
+        .badge-critical {
+            background-color: #FFEBEE;
+            color: #C62828;
+            border: 1px solid #EF9A9A;
+        }
+
+        .badge-high {
+            background-color: #FFF3E0;
+            color: #E65100;
+            border: 1px solid #FFCC80;
+        }
+
+        .badge-medium {
+            background-color: #FFF8E1;
+            color: #F57F17;
+            border: 1px solid #FFE082;
+        }
+
+        .badge-low {
+            background-color: #E8F5E9;
+            color: #2E7D32;
+            border: 1px solid #A5D6A7;
+        }
+
+        /* Strong emphasis */
+        strong {
+            font-weight: 600;
+            color: var(--cardiff-crimson);
+        }
+
+        /* Lists with proper styling */
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checklist li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 8px;
+        }
+
+        .checklist li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success-green);
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* Subsection styling */
+        .subsection {
+            margin-bottom: 48px;
+        }
+
+        .subsection-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--cardiff-crimson);
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--cardiff-crimson);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                padding: 16px 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .nav-tabs {
+                padding: 0 16px;
+            }
+
+            .nav-tab {
+                padding: 12px 16px;
+                font-size: 13px;
+            }
+
+            .main-content {
+                padding: 0 20px;
+                margin: 24px auto;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .header,
+            .nav-container {
+                position: static;
+            }
+
+            .section {
+                display: block !important;
+                page-break-before: always;
+            }
+
+            .expandable-content {
+                max-height: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="module-code">CMT651</div>
+            <h1>Risk, Security &amp; Quality Assurance</h1>
+            <div class="module-subtitle">Agile Software Development</div>
+        </div>
+    </header>
+
+    <nav class="nav-container">
+        <div class="nav-tabs">
+            <button class="nav-tab active" data-section="risk">⚠️ Risk Management</button>
+            <button class="nav-tab" data-section="security">🔒 Information Security</button>
+            <button class="nav-tab" data-section="qa">✅ Quality Assurance</button>
+            <button class="nav-tab" data-section="legal">⚖️ Legal &amp; Ethical</button>
+            <button class="nav-tab" data-section="assessment">📋 Assessment</button>
+            <button class="nav-tab" data-section="references">📚 References</button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- Risk Management Section -->
+        <section id="risk" class="section active">
+            <div class="section-intro">
+                <h2>Risk Management</h2>
+                <p>Understanding IT governance, risk identification, and the ISO 31000 framework for managing risks in software development projects.</p>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Governance Overview</h3>
+                <div class="card">
+                    <p>IT Governance directs IT endeavours to ensure performance meets key objectives:</p>
+                    <ul class="checklist">
+                        <li><strong>Alignment</strong> of IT with enterprise and realization of promised benefits</li>
+                        <li><strong>Use of IT</strong> to enable the enterprise by exploiting opportunities</li>
+                        <li><strong>Responsible use</strong> of IT resources</li>
+                        <li><strong>Appropriate management</strong> of IT-related risks and opportunities</li>
+                    </ul>
+                    <p style="margin-top: 16px;">The governance structure operates at multiple levels, as shown in the diagram below, ensuring that strategic decisions cascade down through programmes and projects to delivery.</p>
+                </div>
+
+                <!-- Governance Triangle -->
+                <div class="card" style="margin-top: 24px;">
+                    <h4 style="text-align: center; color: var(--cardiff-crimson); margin-bottom: 20px; font-size: 20px;">The Governance Triangle Structure</h4>
+                    
+                    <div style="text-align: center; margin: 24px 0;">
+                        <div style="display: inline-block; max-width: 700px; width: 100%;">
+                            <img src="GovernanceTriangle.png" alt="Governance Triangle showing Executive Board, Portfolio, Programmes, Projects hierarchy with Business as Usual operations and connections between Corporate Organisation and Project Organisation" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+                        </div>
+                    </div>
+                    
+                    <div style="background-color: var(--light-grey); padding: 20px; border-radius: 8px; margin-top: 20px;">
+                        <h4 style="color: var(--cardiff-crimson); margin-bottom: 12px;">Understanding the Governance Hierarchy</h4>
+                        <p style="margin-bottom: 16px;">The governance triangle shows how organizations manage strategic initiatives through multiple levels:</p>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 16px;">
+                            <div>
+                                <p style="margin-bottom: 4px;"><strong style="color: var(--cardiff-crimson);">EXECUTIVE BOARD:</strong></p>
+                                <p style="font-size: 13px;">Provides overall governance direction and oversight</p>
+                            </div>
+                            <div>
+                                <p style="margin-bottom: 4px;"><strong style="color: var(--professional-blue);">PORTFOLIO LEVEL:</strong></p>
+                                <p style="font-size: 13px;">Manages the investment portfolio to ensure strategic alignment</p>
+                            </div>
+                            <div>
+                                <p style="margin-bottom: 4px;"><strong style="color: var(--warning-orange);">PROGRAMMES LEVEL:</strong></p>
+                                <p style="font-size: 13px;">Manages programmes to deliver business benefits</p>
+                            </div>
+                            <div>
+                                <p style="margin-bottom: 4px;"><strong style="color: var(--success-green);">PROJECTS LEVEL:</strong></p>
+                                <p style="font-size: 13px;">Manages individual projects to deliver specific outputs</p>
+                            </div>
+                        </div>
+                        
+                        <p style="margin-bottom: 12px;"><strong>BUSINESS AS USUAL:</strong> Day-to-day operational activities that keep the organization running.</p>
+                        
+                        <p style="margin-bottom: 12px;">The arrows show how decisions flow in both directions:</p>
+                        <ul style="margin-left: 20px; font-size: 13px;">
+                            <li style="margin-bottom: 6px;"><strong>RUN THE BUSINESS:</strong> Operating current systems and processes</li>
+                            <li><strong>CHANGE THE BUSINESS:</strong> Strategic transformation and improvements</li>
+                        </ul>
+                        
+                        <p style="margin-top: 16px; font-size: 13px; font-style: italic;">This structure connects the <strong>Corporate Organisation</strong> (people management) with the <strong>Project Organisation</strong> (delivery structures), ensuring alignment at all levels.</p>
+                    </div>
+                    
+                    <div class="callout callout-success" style="margin-top: 20px;">
+                        <div class="callout-title">Key Governance Takeaways</div>
+                        <ul class="checklist">
+                            <li>Strategic governance requires clear structure and accountability</li>
+                            <li>All levels (Portfolio, Programmes, Projects) must work together</li>
+                            <li>Business benefits are managed at programme level</li>
+                            <li>Project outputs contribute to programme benefits</li>
+                            <li>Governance ensures alignment between business strategy and delivery</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">ISO 31000 Framework</h3>
+                <div class="card">
+                    <p>ISO 31000 provides principles, guidelines, and processes for effective risk management:</p>
+                    <ul>
+                        <li>Establishes risk management frameworks within organizations</li>
+                        <li>Provides systematic processes for identifying and treating risks</li>
+                        <li>Integrates risk management into strategic and operational decisions</li>
+                        <li>Enables organizations to identify opportunities and threats</li>
+                        <li>Supports continual improvement of risk management practices</li>
+                    </ul>
+                    <p style="margin-top: 16px;">The framework is universal and applies across any industry or sector, from small businesses to large enterprises.</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Risk Management Process</h3>
+                <div class="card">
+                    <ol>
+                        <li><strong>Establish Context:</strong> Define the organization's internal and external environment, objectives, and risk criteria</li>
+                        <li><strong>Risk Identification:</strong> Systematically identify risks that might affect objectives</li>
+                        <li><strong>Risk Analysis:</strong> Analyze identified risks to understand likelihood and potential consequences</li>
+                        <li><strong>Risk Evaluation:</strong> Compare risk analysis results against risk criteria to prioritize risks</li>
+                        <li><strong>Risk Treatment:</strong> Select and implement strategies to address identified risks</li>
+                        <li><strong>Monitor &amp; Review:</strong> Continuously monitor risk environment and effectiveness of controls</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Risk Categories</h3>
+                <div class="grid-2">
+                    <div class="expandable">
+                        <div class="expandable-header">
+                            <span class="expandable-title">📊 Project Risks</span>
+                            <span class="expandable-icon">▼</span>
+                        </div>
+                        <div class="expandable-content">
+                            <div class="expandable-body">
+                                <p><strong>Description:</strong> Schedule delays, resource constraints, technical challenges, scope creep, team changes</p>
+                                <p style="margin-top: 12px;"><strong>Examples:</strong></p>
+                                <ul>
+                                    <li>Key developer departure mid-project</li>
+                                    <li>Underestimation of technical complexity</li>
+                                    <li>Changing requirements from stakeholders</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable">
+                        <div class="expandable-header">
+                            <span class="expandable-title">⚖️ Legal Risks</span>
+                            <span class="expandable-icon">▼</span>
+                        </div>
+                        <div class="expandable-content">
+                            <div class="expandable-body">
+                                <p><strong>Description:</strong> Regulatory compliance, contracts, intellectual property, cybercrime legislation</p>
+                                <p style="margin-top: 12px;"><strong>Examples:</strong></p>
+                                <ul>
+                                    <li>GDPR violations from improper data handling</li>
+                                    <li>Contract disputes over deliverables</li>
+                                    <li>Open source license non-compliance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable">
+                        <div class="expandable-header">
+                            <span class="expandable-title">🤝 Ethical Risks</span>
+                            <span class="expandable-icon">▼</span>
+                        </div>
+                        <div class="expandable-content">
+                            <div class="expandable-body">
+                                <p><strong>Description:</strong> Professional conduct, stakeholder trust, societal impact, accessibility, discrimination</p>
+                                <p style="margin-top: 12px;"><strong>Examples:</strong></p>
+                                <ul>
+                                    <li>Algorithm bias affecting certain demographics</li>
+                                    <li>Privacy invasion through excessive data collection</li>
+                                    <li>Accessibility failures excluding disabled users</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable">
+                        <div class="expandable-header">
+                            <span class="expandable-title">🔐 Security Risks</span>
+                            <span class="expandable-icon">▼</span>
+                        </div>
+                        <div class="expandable-content">
+                            <div class="expandable-body">
+                                <p><strong>Description:</strong> Data breaches, vulnerabilities, cyber threats, information exposure</p>
+                                <p style="margin-top: 12px;"><strong>Examples:</strong></p>
+                                <ul>
+                                    <li>SQL injection exposing customer databases</li>
+                                    <li>Unencrypted sensitive data in transit</li>
+                                    <li>Authentication bypass due to weak implementation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">PAPA Framework - Information Ethics</h3>
+                <div class="card">
+                    <p>Richard Mason's PAPA framework identifies four key ethical issues in the information age:</p>
+                    <table style="margin-top: 20px;">
+                        <thead>
+                            <tr>
+                                <th>Dimension</th>
+                                <th>Key Question</th>
+                                <th>Best Practice</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Privacy</strong></td>
+                                <td>What personal information must be revealed?</td>
+                                <td>Collect only necessary data, obtain explicit consent, secure storage and transmission</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Accuracy</strong></td>
+                                <td>Who is responsible for information accuracy?</td>
+                                <td>Input validation, regular audits, clear error handling, data quality processes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Property</strong></td>
+                                <td>Who owns information?</td>
+                                <td>Respect intellectual property, proper licensing, clear attribution, ownership documentation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Accessibility</strong></td>
+                                <td>What information should be accessible?</td>
+                                <td>WCAG compliance, multiple formats, clear policies, inclusive design</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Section -->
+        <section id="security" class="section">
+            <div class="section-intro">
+                <h2>Information Security</h2>
+                <p>Comprehensive coverage of security standards, common vulnerabilities, threats, and mitigation strategies for web applications.</p>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">CIA Triad: Core Security Principles</h3>
+                <div class="grid-3">
+                    <div class="card">
+                        <h4>👁️ Confidentiality</h4>
+                        <p><strong>Only authorized individuals can access information</strong></p>
+                        <ul style="margin-top: 12px;">
+                            <li>Encryption of sensitive data</li>
+                            <li>Access control lists and authentication</li>
+                            <li>Need-to-know principle</li>
+                            <li>Data classification</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>✅ Integrity</h4>
+                        <p><strong>Data is accurate, complete, and hasn't been altered</strong></p>
+                        <ul style="margin-top: 12px;">
+                            <li>Data validation and verification</li>
+                            <li>Hash functions and digital signatures</li>
+                            <li>Version control and audit trails</li>
+                            <li>Change management processes</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>⚡ Availability</h4>
+                        <p><strong>Systems and data are accessible when authorized users need them</strong></p>
+                        <ul style="margin-top: 12px;">
+                            <li>Redundancy and backups</li>
+                            <li>DDoS protection mechanisms</li>
+                            <li>System monitoring and maintenance</li>
+                            <li>Disaster recovery planning</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">ISO 27005 Overview</h3>
+                <div class="card">
+                    <p>ISO 27005 provides guidelines for information security risk management:</p>
+                    <ul>
+                        <li>Systematic approach to identifying and assessing security risks</li>
+                        <li>Integration with ISO 27001 (Information Security Management System)</li>
+                        <li>Context establishment and threat identification</li>
+                        <li>Risk analysis and evaluation</li>
+                        <li>Risk treatment planning and implementation</li>
+                        <li>Continuous monitoring and review</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">OWASP Top 10 Vulnerabilities</h3>
+                <p style="margin-bottom: 16px;">The Open Web Application Security Project (OWASP) maintains a regularly updated list of the most critical web application security risks.</p>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">A01 - Broken Access Control <span class="badge badge-critical">CRITICAL</span></span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>Description:</strong> Users can perform unauthorized actions or access restricted data</p>
+                            <p style="margin-top: 8px;"><strong>Examples:</strong></p>
+                            <ul>
+                                <li>Admin functionality accessible without authentication check</li>
+                                <li>Viewing or editing someone else's account</li>
+                                <li>Insecure direct object references (IDOR)</li>
+                            </ul>
+                            <p style="margin-top: 12px;"><strong>Mitigation:</strong></p>
+                            <ul>
+                                <li>Implement proper authentication mechanisms</li>
+                                <li>Use role-based access control (RBAC)</li>
+                                <li>Follow principle of deny by default</li>
+                                <li>Audit access logs regularly</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">A02 - Cryptographic Failures <span class="badge badge-critical">CRITICAL</span></span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>Description:</strong> Sensitive data exposed due to weak encryption or poor cryptographic practices</p>
+                            <p style="margin-top: 8px;"><strong>Examples:</strong></p>
+                            <ul>
+                                <li>Passwords stored in plain text</li>
+                                <li>Transmitting data over HTTP instead of HTTPS</li>
+                                <li>Using weak cryptographic algorithms</li>
+                            </ul>
+                            <p style="margin-top: 12px;"><strong>Mitigation:</strong></p>
+                            <ul>
+                                <li>Use strong encryption algorithms (AES-256)</li>
+                                <li>Hash passwords with salt (bcrypt, scrypt)</li>
+                                <li>Encrypt data in transit using HTTPS/TLS</li>
+                                <li>Manage cryptographic keys securely</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">A03 - Injection <span class="badge badge-critical">CRITICAL</span></span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>Description:</strong> Untrusted data is interpreted as code or commands</p>
+                            <p style="margin-top: 8px;"><strong>Example SQL Injection:</strong></p>
+                            <p style="background: #f5f5f5; padding: 12px; border-radius: 4px; font-family: monospace; font-size: 12px; margin: 8px 0;">SELECT * FROM users WHERE id = 1 OR 1=1</p>
+                            <p style="margin-top: 12px;"><strong>Mitigation:</strong></p>
+                            <ul>
+                                <li>Use parameterized queries and prepared statements</li>
+                                <li>Input validation and sanitization</li>
+                                <li>Principle of least privilege for database access</li>
+                                <li>Web application firewalls</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">A04 - Insecure Design <span class="badge badge-high">HIGH</span></span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>Description:</strong> Missing security controls and threat modeling in design phase</p>
+                            <p style="margin-top: 8px;"><strong>Examples:</strong></p>
+                            <ul>
+                                <li>No rate limiting on login attempts</li>
+                                <li>Business logic flaws</li>
+                                <li>Missing security requirements</li>
+                            </ul>
+                            <p style="margin-top: 12px;"><strong>Mitigation:</strong></p>
+                            <ul>
+                                <li>Threat modeling during design phase</li>
+                                <li>Security requirements in user stories</li>
+                                <li>Security design reviews</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">A05 - Security Misconfiguration <span class="badge badge-high">HIGH</span></span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>Description:</strong> Default credentials, debugging enabled, unnecessary features, insecure settings</p>
+                            <p style="margin-top: 8px;"><strong>Examples:</strong></p>
+                            <ul>
+                                <li>AWS bucket with default public permissions</li>
+                                <li>Debugging features enabled in production</li>
+                                <li>Default credentials still in use</li>
+                            </ul>
+                            <p style="margin-top: 12px;"><strong>Mitigation:</strong></p>
+                            <ul>
+                                <li>Disable unnecessary default accounts</li>
+                                <li>Remove or disable unnecessary features</li>
+                                <li>Use security scanning tools</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">A06 - Vulnerable and Outdated Components <span class="badge badge-high">HIGH</span></span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>Description:</strong> Using components with known vulnerabilities or outdated versions</p>
+                            <p style="margin-top: 12px;"><strong>Mitigation:</strong></p>
+                            <ul>
+                                <li>Regular dependency scanning</li>
+                                <li>Automated update processes</li>
+                                <li>Remove unused dependencies</li>
+                                <li>Subscribe to security advisories</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">A07 - Identification and Authentication Failures <span class="badge badge-high">HIGH</span></span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>Description:</strong> Weaknesses in authentication and session management</p>
+                            <p style="margin-top: 8px;"><strong>Examples:</strong></p>
+                            <ul>
+                                <li>Weak password policies</li>
+                                <li>Exposed session IDs in URLs</li>
+                                <li>Flawed multi-factor authentication</li>
+                            </ul>
+                            <p style="margin-top: 12px;"><strong>Mitigation:</strong></p>
+                            <ul>
+                                <li>Implement MFA</li>
+                                <li>Enforce strong password policies</li>
+                                <li>Secure session management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">A08 - Software and Data Integrity Failures <span class="badge badge-high">HIGH</span></span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>Description:</strong> Code and infrastructure without integrity verification</p>
+                            <p style="margin-top: 12px;"><strong>Mitigation:</strong></p>
+                            <ul>
+                                <li>Digital signatures for updates</li>
+                                <li>Verify integrity of dependencies</li>
+                                <li>Secure CI/CD configuration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">A09 - Security Logging and Monitoring Failures <span class="badge badge-medium">MEDIUM</span></span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>Description:</strong> Insufficient logging allowing attacks to go undetected</p>
+                            <p style="margin-top: 12px;"><strong>Mitigation:</strong></p>
+                            <ul>
+                                <li>Comprehensive logging strategy</li>
+                                <li>Centralized log management</li>
+                                <li>Real-time monitoring</li>
+                                <li>Automated alerts</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">A10 - Server-Side Request Forgery (SSRF) <span class="badge badge-medium">MEDIUM</span></span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>Description:</strong> Attackers abuse server functionality to access internal resources</p>
+                            <p style="margin-top: 12px;"><strong>Mitigation:</strong></p>
+                            <ul>
+                                <li>Input validation of URLs</li>
+                                <li>Network segmentation</li>
+                                <li>Deny-by-default firewall rules</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Common Web Security Threats</h3>
+                <div class="grid-3">
+                    <div class="card">
+                        <h4>💰 Ransomware</h4>
+                        <p><strong>Impact: HIGH</strong></p>
+                        <p>Malware that encrypts files and demands payment for decryption.</p>
+                        <p style="margin-top: 12px;"><strong>Prevention:</strong></p>
+                        <ul style="font-size: 13px;">
+                            <li>Regular backups stored offline</li>
+                            <li>Security awareness training</li>
+                            <li>Antivirus software</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>🎣 Phishing</h4>
+                        <p><strong>Impact: HIGH</strong></p>
+                        <p>Deceptive emails or messages designed to steal credentials.</p>
+                        <p style="margin-top: 12px;"><strong>Prevention:</strong></p>
+                        <ul style="font-size: 13px;">
+                            <li>Email security filters</li>
+                            <li>User security training</li>
+                            <li>Multi-factor authentication</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>⚔️ DDoS Attacks</h4>
+                        <p><strong>Impact: CRITICAL</strong></p>
+                        <p>Overwhelming services with traffic to cause unavailability.</p>
+                        <p style="margin-top: 12px;"><strong>Prevention:</strong></p>
+                        <ul style="font-size: 13px;">
+                            <li>DDoS mitigation services</li>
+                            <li>Content Delivery Networks</li>
+                            <li>Rate limiting</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>🔫 Cross-Site Scripting</h4>
+                        <p><strong>Impact: HIGH</strong></p>
+                        <p>Injecting malicious scripts into trusted websites.</p>
+                        <p style="margin-top: 12px;"><strong>Prevention:</strong></p>
+                        <ul style="font-size: 13px;">
+                            <li>Input validation</li>
+                            <li>Output encoding</li>
+                            <li>Content Security Policy</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>🦠 Viruses &amp; Worms</h4>
+                        <p><strong>Impact: CRITICAL</strong></p>
+                        <p>Self-replicating malicious programs.</p>
+                        <p style="margin-top: 12px;"><strong>Prevention:</strong></p>
+                        <ul style="font-size: 13px;">
+                            <li>Antivirus tools</li>
+                            <li>Regular security updates</li>
+                            <li>Network segmentation</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>🕵️ Man-in-the-Middle</h4>
+                        <p><strong>Impact: HIGH</strong></p>
+                        <p>Intercepting communication between two parties.</p>
+                        <p style="margin-top: 12px;"><strong>Prevention:</strong></p>
+                        <ul style="font-size: 13px;">
+                            <li>HTTPS/TLS encryption</li>
+                            <li>Certificate pinning</li>
+                            <li>VPN for sensitive data</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Security Testing Approaches</h3>
+                <div class="card">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>Vulnerability Assessment</th>
+                                <th>Penetration Testing</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Definition</strong></td>
+                                <td>Systematic scanning to identify vulnerabilities</td>
+                                <td>Authorized simulated attacks to test security controls</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Scope</strong></td>
+                                <td>Broad, typically automated scanning</td>
+                                <td>Focused, manual testing with limited scope</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Impact</strong></td>
+                                <td>Non-invasive, no exploitation</td>
+                                <td>Attempts actual exploitation (with permission)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Frequency</strong></td>
+                                <td>Frequent or continuous (daily/weekly)</td>
+                                <td>Periodic (quarterly/annually)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Best For</strong></td>
+                                <td>Identifying known vulnerabilities and compliance gaps</td>
+                                <td>Understanding real-world attack vectors</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- QA Section -->
+        <section id="qa" class="section">
+            <div class="section-intro">
+                <h2>Quality Assurance</h2>
+                <p>Agile QA practices, testing methodologies, continuous integration, and code review best practices for delivering high-quality software.</p>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Agile QA Principles</h3>
+                <div class="card">
+                    <ul class="checklist">
+                        <li><strong>Testing Early and Often</strong> - Begin testing from the first sprint</li>
+                        <li><strong>Frequent Feedback Loops</strong> - Rapid iteration and validation</li>
+                        <li><strong>Cross-Functional Collaboration</strong> - Developers, testers, and stakeholders work together</li>
+                        <li><strong>Shift-Left Testing</strong> - Move testing earlier in the development lifecycle</li>
+                        <li><strong>Continuous Improvement</strong> - Regular retrospectives and process refinement</li>
+                        <li><strong>Automated Testing</strong> - Reduce manual effort and increase coverage</li>
+                    </ul>
+                </div>
+
+                <div class="callout callout-info">
+                    <div class="callout-title">Shift-Left Testing</div>
+                    <p>The shift-left approach moves testing activities earlier in the software development lifecycle. This enables early defect detection when fixes are cheaper and faster, reduces rework costs, and improves overall product quality.</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">INVEST Checklist - Definition of Ready</h3>
+                <p style="margin-bottom: 16px;">User stories should meet the INVEST criteria before being brought into a sprint.</p>
+
+                <div class="grid-3">
+                    <div class="card">
+                        <h4 style="color: var(--cardiff-crimson); font-size: 24px; margin-bottom: 8px;">I</h4>
+                        <h4>Independent</h4>
+                        <p>Stories should have no dependencies on other stories, allowing them to be developed in any order.</p>
+                        <p style="margin-top: 8px;"><strong>Benefit:</strong> Flexibility in prioritization</p>
+                    </div>
+
+                    <div class="card">
+                        <h4 style="color: var(--cardiff-crimson); font-size: 24px; margin-bottom: 8px;">N</h4>
+                        <h4>Negotiable</h4>
+                        <p>Stories should prompt discussion without prescribing the exact solution.</p>
+                        <p style="margin-top: 8px;"><strong>Benefit:</strong> Encourages team creativity</p>
+                    </div>
+
+                    <div class="card">
+                        <h4 style="color: var(--cardiff-crimson); font-size: 24px; margin-bottom: 8px;">V</h4>
+                        <h4>Valuable</h4>
+                        <p>Each story must deliver clear value to a specific user or stakeholder.</p>
+                        <p style="margin-top: 8px;"><strong>Benefit:</strong> Ensures work aligns with user needs</p>
+                    </div>
+
+                    <div class="card">
+                        <h4 style="color: var(--cardiff-crimson); font-size: 24px; margin-bottom: 8px;">E</h4>
+                        <h4>Estimable</h4>
+                        <p>The team must be able to estimate the story's size with reasonable confidence.</p>
+                        <p style="margin-top: 8px;"><strong>Benefit:</strong> Enables sprint planning</p>
+                    </div>
+
+                    <div class="card">
+                        <h4 style="color: var(--cardiff-crimson); font-size: 24px; margin-bottom: 8px;">S</h4>
+                        <h4>Small</h4>
+                        <p>Stories should represent the smallest piece that delivers useful, working software.</p>
+                        <p style="margin-top: 8px;"><strong>Benefit:</strong> Faster feedback, reduced risk</p>
+                    </div>
+
+                    <div class="card">
+                        <h4 style="color: var(--cardiff-crimson); font-size: 24px; margin-bottom: 8px;">T</h4>
+                        <h4>Testable</h4>
+                        <p>Clear acceptance criteria must exist to verify the story is complete.</p>
+                        <p style="margin-top: 8px;"><strong>Benefit:</strong> Objective completion criteria</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Definition of Done</h3>
+                <p style="margin-bottom: 16px;">A checklist of activities that must be completed before a user story or task is considered "done."</p>
+
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-title">Development DoD</div>
+                        <ul class="checklist">
+                            <li>Working code checked into version control</li>
+                            <li>Unit tests written and passing</li>
+                            <li>Code reviewed and meets quality standards</li>
+                            <li>All bugs and exceptions fixed and tested</li>
+                            <li>Acceptance criteria met and verified</li>
+                            <li>Technical documentation updated</li>
+                            <li>No regression in existing functionality</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Testing DoD</div>
+                        <ul class="checklist">
+                            <li>Test cases created (manual/automated/hybrid)</li>
+                            <li>Positive and negative test scenarios covered</li>
+                            <li>Regression tests included and passing</li>
+                            <li>Tests reviewed and updated in test suite</li>
+                            <li>All identified bugs confirmed fixed</li>
+                            <li>Performance and security considerations addressed</li>
+                            <li>Accessibility requirements validated</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Testing Types in Agile</h3>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">Unit Testing</span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>Purpose:</strong> Test individual components or functions in isolation</p>
+                            <p style="margin-top: 12px;"><strong>Characteristics:</strong></p>
+                            <ul>
+                                <li>Fast execution (milliseconds)</li>
+                                <li>High code coverage targets (70-90%)</li>
+                                <li>Automated and run frequently</li>
+                                <li>Written by developers</li>
+                            </ul>
+                            <p style="margin-top: 12px;"><strong>Tools:</strong> JUnit, Pytest, Jest, NUnit</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">Integration Testing</span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>Purpose:</strong> Verify that different components work together correctly</p>
+                            <p style="margin-top: 12px;"><strong>Characteristics:</strong></p>
+                            <ul>
+                                <li>Tests component interactions and interfaces</li>
+                                <li>May involve databases, APIs, or external services</li>
+                                <li>Slower than unit tests</li>
+                                <li>Can be automated or manual</li>
+                            </ul>
+                            <p style="margin-top: 12px;"><strong>Tools:</strong> Selenium, Postman, REST Assured</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">System Testing</span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>Purpose:</strong> Validate end-to-end scenarios from a user perspective</p>
+                            <p style="margin-top: 12px;"><strong>Characteristics:</strong></p>
+                            <ul>
+                                <li>Tests complete user workflows</li>
+                                <li>Performed in environment similar to production</li>
+                                <li>Includes functional and non-functional testing</li>
+                                <li>May involve UI automation</li>
+                            </ul>
+                            <p style="margin-top: 12px;"><strong>Tools:</strong> Selenium, Cucumber, TestComplete</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">Regression Testing</span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>Purpose:</strong> Ensure new changes haven't broken existing functionality</p>
+                            <p style="margin-top: 12px;"><strong>Characteristics:</strong></p>
+                            <ul>
+                                <li>Re-runs existing test suites</li>
+                                <li>Highly automated for efficiency</li>
+                                <li>Critical for continuous delivery</li>
+                                <li>Grows over time as features are added</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">Acceptance Testing</span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>Purpose:</strong> Verify that user story acceptance criteria are met</p>
+                            <p style="margin-top: 12px;"><strong>Characteristics:</strong></p>
+                            <ul>
+                                <li>Based on user story acceptance criteria</li>
+                                <li>Often performed by product owner or QA</li>
+                                <li>Can be automated (BDD frameworks)</li>
+                                <li>Final validation before marking story as done</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Code Review Best Practices</h3>
+
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-title">Reviewer Responsibilities</div>
+                        <ul class="checklist">
+                            <li>Understand why the change is necessary</li>
+                            <li>Review for simplicity and clarity</li>
+                            <li>Identify alternative approaches</li>
+                            <li>Check adherence to coding standards</li>
+                            <li>Verify tests are adequate</li>
+                            <li>Provide constructive feedback</li>
+                            <li>Track review iterations</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Author Responsibilities</div>
+                        <ul class="checklist">
+                            <li>Explain reasoning behind changes</li>
+                            <li>Keep changes focused and atomic</li>
+                            <li>Respond to all feedback thoughtfully</li>
+                            <li>Extract unrelated changes</li>
+                            <li>Update documentation as needed</li>
+                            <li>Ensure all tests pass before review</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="callout callout-warning">
+                    <div class="callout-title">Merge Request Evaluation Criteria</div>
+                    <ul>
+                        <li>Does it solve the stated problem?</li>
+                        <li>Is the code readable and maintainable?</li>
+                        <li>Are there adequate tests with good coverage?</li>
+                        <li>Does it follow project conventions?</li>
+                        <li>Are there any security or performance concerns?</li>
+                        <li>Is the Definition of Done satisfied?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Continuous Integration &amp; Deployment (CI/CD)</h3>
+                <div class="card">
+                    <p>CI/CD automates the software delivery pipeline from code commit to production deployment.</p>
+
+                    <h4 style="margin-top: 20px;">Key Components:</h4>
+                    <ul>
+                        <li><strong>Version Control System:</strong> Central repository for code (GitHub, GitLab)</li>
+                        <li><strong>Automated Build:</strong> Compile code and create artifacts</li>
+                        <li><strong>Automated Testing:</strong> Unit, integration, and regression tests</li>
+                        <li><strong>Code Quality Checks:</strong> Linting, static analysis, security scanning</li>
+                        <li><strong>Artifact Management:</strong> Store build artifacts</li>
+                        <li><strong>Deployment Automation:</strong> Deploy to staging and production</li>
+                        <li><strong>Monitoring:</strong> Track application health and performance</li>
+                    </ul>
+
+                    <h4 style="margin-top: 20px;">Benefits:</h4>
+                    <ul>
+                        <li>Faster feedback loops on code quality</li>
+                        <li>Enhanced collaboration between developers</li>
+                        <li>Increased test coverage and quality</li>
+                        <li>Reduced manual testing effort</li>
+                        <li>More frequent, reliable releases</li>
+                        <li>Faster time to market</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Legal & Ethics Section -->
+        <section id="legal" class="section">
+            <div class="section-intro">
+                <h2>Legal &amp; Ethical Considerations</h2>
+                <p>Understanding legal obligations, regulatory compliance, and professional ethics in software development.</p>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Computer Misuse Act 1990 (UK)</h3>
+                <div class="card">
+                    <p>The Computer Misuse Act is the primary UK legislation addressing cybercrime and unauthorized access to computer systems.</p>
+
+                    <table style="margin-top: 20px;">
+                        <thead>
+                            <tr>
+                                <th>Section</th>
+                                <th>Offense</th>
+                                <th>Maximum Penalty</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Section 1</strong></td>
+                                <td>Unauthorized access to computer material</td>
+                                <td>2 years imprisonment and/or fine</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Section 2</strong></td>
+                                <td>Unauthorized access with intent to commit further offences</td>
+                                <td>5 years imprisonment and/or fine</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Section 3</strong></td>
+                                <td>Unauthorized acts with intent to impair computer operation</td>
+                                <td>10 years imprisonment and/or fine</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Section 3ZA</strong></td>
+                                <td>Unauthorized acts causing serious damage</td>
+                                <td>14 years (life if national security risk)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="callout callout-warning" style="margin-top: 20px;">
+                        <div class="callout-title">Implications for Developers</div>
+                        <p>Be aware of legal boundaries when:</p>
+                        <ul>
+                            <li>Testing security vulnerabilities (always get written authorization)</li>
+                            <li>Accessing systems or data (only access what you're authorized for)</li>
+                            <li>Developing security tools (ensure legitimate use cases)</li>
+                            <li>Handling user data (respect access controls and privacy)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">GDPR (General Data Protection Regulation)</h3>
+                <div class="card">
+                    <p>The GDPR is EU regulation that applies to any organization processing personal data of EU residents.</p>
+
+                    <h4 style="margin-top: 20px;">Key Obligations for Software Developers:</h4>
+                    <ul>
+                        <li><strong>Data Protection by Design and Default:</strong> Build privacy into systems from the start</li>
+                        <li><strong>Appropriate Technical Safeguards:</strong> Encryption, access controls, secure coding</li>
+                        <li><strong>Confidentiality, Integrity, Availability:</strong> Ensure CIA triad for personal data</li>
+                        <li><strong>Resilience:</strong> Systems can recover from incidents</li>
+                        <li><strong>Risk Assessment:</strong> Evaluate and mitigate data processing risks</li>
+                        <li><strong>Avoid Known Vulnerabilities:</strong> Keep systems patched and secure</li>
+                    </ul>
+
+                    <h4 style="margin-top: 20px;">Data Subject Rights:</h4>
+                    <ul>
+                        <li>Right to access their data</li>
+                        <li>Right to rectification (correction)</li>
+                        <li>Right to erasure ("right to be forgotten")</li>
+                        <li>Right to data portability</li>
+                        <li>Right to object to processing</li>
+                    </ul>
+
+                    <div class="callout callout-error" style="margin-top: 20px;">
+                        <div class="callout-title">Penalties for Non-Compliance</div>
+                        <p>Fines up to <strong>€20 million</strong> or <strong>4% of global annual revenue</strong>, whichever is higher, for serious violations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Intellectual Property</h3>
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-title">Copyright</div>
+                        <p>Protects original works including source code, documentation, and designs.</p>
+                        <ul style="margin-top: 12px;">
+                            <li>Automatic protection upon creation</li>
+                            <li>Employer typically owns work created by employees</li>
+                            <li>Freelance work requires explicit assignment</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Patents</div>
+                        <p>Protect inventions and novel processes.</p>
+                        <ul style="margin-top: 12px;">
+                            <li>Must be novel, non-obvious, and useful</li>
+                            <li>Software patents controversial in many jurisdictions</li>
+                            <li>Requires formal application and examination</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Trademarks</div>
+                        <p>Protect brand names, logos, and distinctive marks.</p>
+                        <ul style="margin-top: 12px;">
+                            <li>Prevents confusion in marketplace</li>
+                            <li>Requires registration for full protection</li>
+                            <li>Must be actively defended</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Software Licensing</div>
+                        <p>Governs how software can be used and distributed.</p>
+                        <ul style="margin-top: 12px;">
+                            <li><strong>Proprietary:</strong> Restrictive, closed-source</li>
+                            <li><strong>Open Source:</strong> Various licenses (MIT, GPL, Apache)</li>
+                            <li><strong>Compliance:</strong> Must respect license terms</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Professional Ethics</h3>
+                <p style="margin-bottom: 16px;">Professional bodies like BCS (British Computer Society) and ACM (Association for Computing Machinery) provide codes of conduct for IT professionals.</p>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">1. Public Interest</span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>Act consistently with the public good and societal benefit.</strong></p>
+                            <ul style="margin-top: 12px;">
+                                <li>Consider broader societal impacts of technology</li>
+                                <li>Prioritize public safety and welfare</li>
+                                <li>Report risks that could harm the public</li>
+                                <li>Promote sustainability and environmental responsibility</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">2. Professional Competence</span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>Only undertake work within your areas of competence.</strong></p>
+                            <ul style="margin-top: 12px;">
+                                <li>Maintain and develop professional knowledge</li>
+                                <li>Recognize limitations and seek help when needed</li>
+                                <li>Continuous professional development (CPD)</li>
+                                <li>Stay current with technology and best practices</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">3. Professional Integrity</span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>Be honest, straightforward, and transparent in professional activities.</strong></p>
+                            <ul style="margin-top: 12px;">
+                                <li>Avoid conflicts of interest</li>
+                                <li>Honest communication about capabilities and limitations</li>
+                                <li>Respect confidentiality and privacy</li>
+                                <li>Give credit where due; avoid plagiarism</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">4. Duty to Relevant Authority</span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>Act in the best interests of your employer or client.</strong></p>
+                            <ul style="margin-top: 12px;">
+                                <li>Protect employer's or client's legitimate interests</li>
+                                <li>Avoid misuse of employer resources</li>
+                                <li>Disclose conflicts of interest</li>
+                                <li>Balance employer duties with public interest</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">5. Duty to the Profession</span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>Uphold reputation and standing of the profession.</strong></p>
+                            <ul style="margin-top: 12px;">
+                                <li>Promote professional standards</li>
+                                <li>Support professional development of others</li>
+                                <li>Act as a role model for ethical behavior</li>
+                                <li>Contribute to knowledge sharing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">6. Continuous Learning</span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>Maintain and improve professional knowledge.</strong></p>
+                            <ul style="margin-top: 12px;">
+                                <li>Stay current with technology changes</li>
+                                <li>Attend training and conferences</li>
+                                <li>Read technical literature</li>
+                                <li>Share knowledge with others</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Assessment Section -->
+        <section id="assessment" class="section">
+            <div class="section-intro">
+                <h2>Module Assessment</h2>
+                <p>Comprehensive guide to CMT651 assessment components, requirements, and submission criteria.</p>
+            </div>
+
+            <div class="callout callout-info">
+                <div class="callout-title">Assessment Structure Overview</div>
+                <p>The module assessment consists of three parts:</p>
+                <ul>
+                    <li><strong>Part 1:</strong> Evidence of Individual Contribution (40%)</li>
+                    <li><strong>Part 2:</strong> Reflection on Team Process (40%)</li>
+                    <li><strong>Part 3:</strong> Risk Register (20%)</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Part 1: Evidence of Individual Contribution (40%)</h3>
+
+                <div class="card">
+                    <div class="card-title">Overview</div>
+                    <p>This part demonstrates your significant contribution to the team's project process and deliverables. It consists of three components:</p>
+                    <ul style="margin-top: 12px;">
+                        <li><strong>1a:</strong> Evidence of Contribution to Project Process</li>
+                        <li><strong>1b:</strong> Evidence of Competence in Developing User-Valued Requirements (400 words)</li>
+                        <li><strong>1c:</strong> Evidence of Competence in Evaluating Merge Requests (400 words)</li>
+                    </ul>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">1a - Process Deliverables Contribution</span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <h4>What to Demonstrate:</h4>
+                            <p>Significant contribution to Scrum process management and source code control workflow.</p>
+
+                            <h4 style="margin-top: 16px;">Evidence Sources:</h4>
+                            <ul class="checklist">
+                                <li><strong>GitLab Repositories:</strong> Teaching team must have maintainer access</li>
+                                <li><strong>Microsoft Teams Space:</strong> Organized with appropriate folders</li>
+                                <li><strong>Evidence of Contribution Form:</strong> Updated weekly</li>
+                                <li><strong>Weekly Review Sessions:</strong> Monday meetings with teaching team</li>
+                            </ul>
+
+                            <h4 style="margin-top: 16px;">Process Deliverables Include:</h4>
+                            <ul>
+                                <li>Team working agreements</li>
+                                <li>User stories with acceptance criteria</li>
+                                <li>Sprint plans and daily scrum records</li>
+                                <li>Code reviews and merge request evaluations</li>
+                                <li>Sprint reviews and retrospectives</li>
+                                <li>Risk register updates</li>
+                            </ul>
+
+                            <div class="callout callout-warning" style="margin-top: 16px;">
+                                <div class="callout-title">Critical Requirement</div>
+                                <p>The Evidence of Contribution Form must be updated <strong>the day before</strong> your weekly review meeting.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">1b - User Story Competence (400 words)</span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <h4>Requirements:</h4>
+                            <ul class="checklist">
+                                <li>Provide <strong>ONE best example</strong> of your competence</li>
+                                <li>Include the user story with acceptance criteria</li>
+                                <li>Ensure clear user value is articulated</li>
+                                <li>Include screenshots and GitLab issue link</li>
+                            </ul>
+
+                            <h4 style="margin-top: 16px;">Critical Analysis Using INVEST:</h4>
+                            <table style="margin-top: 12px;">
+                                <thead>
+                                    <tr>
+                                        <th>Criterion</th>
+                                        <th>What to Address</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Independent</strong></td>
+                                        <td>How the story avoids dependencies</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Negotiable</strong></td>
+                                        <td>How it prompts discussion without prescribing solution</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Valuable</strong></td>
+                                        <td>Clear value for specific user role</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Estimable</strong></td>
+                                        <td>Why the team could estimate its size</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Small</strong></td>
+                                        <td>How it represents minimal viable increment</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Testable</strong></td>
+                                        <td>Quality and clarity of acceptance criteria</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h4 style="margin-top: 16px;">Distinction-Level Criteria:</h4>
+                            <ul>
+                                <li>Comprehensive critical analysis of all INVEST dimensions</li>
+                                <li>Clear articulation of user value</li>
+                                <li>Well-structured acceptance criteria</li>
+                                <li>Evidence of stakeholder collaboration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">1c - Merge Request Evaluation (400 words)</span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <h4>Requirements:</h4>
+                            <ul class="checklist">
+                                <li>Provide <strong>ONE best example</strong> of code review</li>
+                                <li>Demonstrate quality improvement advice</li>
+                                <li>Include screenshots and GitLab MR link</li>
+                            </ul>
+
+                            <h4 style="margin-top: 16px;">Critical Analysis Should Cover:</h4>
+                            <ul>
+                                <li><strong>Code Review Approach:</strong> How you understood changes and identified improvements</li>
+                                <li><strong>Testing Methodology:</strong> How you verified functionality and edge cases</li>
+                                <li><strong>Definition of Done:</strong> Checklist items verified</li>
+                                <li><strong>Quality Improvements:</strong> Specific improvements suggested</li>
+                            </ul>
+
+                            <h4 style="margin-top: 16px;">Distinction-Level Criteria:</h4>
+                            <ul>
+                                <li>Thorough, systematic review approach</li>
+                                <li>Evidence of deep technical understanding</li>
+                                <li>Constructive, actionable feedback</li>
+                                <li>Consideration of maintainability</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Part 2: Reflection on Team Process (40%, 1500 words)</h3>
+
+                <div class="card">
+                    <div class="card-title">Overview</div>
+                    <p>Evidence-based reflection on the effectiveness of your team's project management approach.</p>
+                    <p style="margin-top: 8px;"><strong>Word Count:</strong> 1500 words</p>
+                    <p><strong>Weight:</strong> 40% of module grade</p>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">Component 1: Scrum Implementation Evaluation</span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <h4>Key Questions to Address:</h4>
+                            <ul>
+                                <li>How well did the team adhere to The Scrum Guide?</li>
+                                <li>What differences existed between your implementation and standard Scrum?</li>
+                                <li>How did these differences affect the project outcome?</li>
+                                <li>What worked well and what could be improved?</li>
+                            </ul>
+
+                            <h4 style="margin-top: 16px;">Scrum Elements to Evaluate:</h4>
+                            <ul>
+                                <li><strong>Sprint Planning:</strong> Effectiveness of planning sessions</li>
+                                <li><strong>Daily Scrums:</strong> Frequency, format, value derived</li>
+                                <li><strong>Sprint Review:</strong> Stakeholder engagement</li>
+                                <li><strong>Sprint Retrospective:</strong> Continuous improvement actions</li>
+                                <li><strong>Product Backlog:</strong> Prioritization and refinement</li>
+                                <li><strong>Roles:</strong> Product Owner, Scrum Master responsibilities</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">Component 2: Source Code Workflow Evaluation</span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <h4>Key Questions to Address:</h4>
+                            <ul>
+                                <li>How effective was your branch/merge request workflow?</li>
+                                <li>What did the team do well?</li>
+                                <li>What areas need improvement?</li>
+                            </ul>
+
+                            <h4 style="margin-top: 16px;">Workflow Elements to Evaluate:</h4>
+                            <ul>
+                                <li><strong>Branching Strategy:</strong> Feature branches, naming conventions</li>
+                                <li><strong>Merge Requests:</strong> Review process and approval</li>
+                                <li><strong>Code Review Quality:</strong> Depth and learning outcomes</li>
+                                <li><strong>CI/CD Integration:</strong> Automated testing and deployment</li>
+                                <li><strong>Quality Gates:</strong> Definition of Done enforcement</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 16px;">
+                    <div class="card-title">Distinction-Level Criteria</div>
+                    <ul class="checklist">
+                        <li>Critical evaluation with insightful examples</li>
+                        <li>Clear evidence of reflection and learning</li>
+                        <li>Reference to relevant literature and best practices</li>
+                        <li>Balanced assessment of strengths and weaknesses</li>
+                        <li>Actionable recommendations for improvement</li>
+                        <li>Clear links between process and outcomes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Part 3: Risk Register (20%, max 2 pages)</h3>
+
+                <div class="card">
+                    <div class="card-title">Overview</div>
+                    <p>Develop a risk register for the scenario where your client decides to move to a full solution based on your prototype.</p>
+                    <p style="margin-top: 8px;"><strong>Format:</strong> Table with risk descriptions, likelihood, impact, and countermeasures</p>
+                    <p><strong>Maximum Length:</strong> 2 pages</p>
+                    <p><strong>Weight:</strong> 20% of module grade</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Required Risk Categories</div>
+                    <p>Your risk register must cover the following categories:</p>
+                    <div class="grid-2" style="margin-top: 16px;">
+                        <div style="background: #E3F2FD; padding: 16px; border-radius: 8px;">
+                            <strong>Legal Issues</strong>
+                            <ul style="margin-top: 8px; font-size: 13px;">
+                                <li>GDPR compliance</li>
+                                <li>Accessibility regulations</li>
+                                <li>Contract liability</li>
+                            </ul>
+                        </div>
+                        <div style="background: #FFF3E0; padding: 16px; border-radius: 8px;">
+                            <strong>Ethical Issues</strong>
+                            <ul style="margin-top: 8px; font-size: 13px;">
+                                <li>Privacy concerns</li>
+                                <li>Algorithmic bias</li>
+                                <li>Digital exclusion</li>
+                            </ul>
+                        </div>
+                        <div style="background: #E8F5E9; padding: 16px; border-radius: 8px;">
+                            <strong>Social Issues</strong>
+                            <ul style="margin-top: 8px; font-size: 13px;">
+                                <li>User impact</li>
+                                <li>Accessibility</li>
+                                <li>Environmental impact</li>
+                            </ul>
+                        </div>
+                        <div style="background: #F3E5F5; padding: 16px; border-radius: 8px;">
+                            <strong>Professional Issues</strong>
+                            <ul style="margin-top: 8px; font-size: 13px;">
+                                <li>Competence gaps</li>
+                                <li>Conflicts of interest</li>
+                                <li>Accountability</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="background: #FFEBEE; padding: 16px; border-radius: 8px; margin-top: 16px;">
+                        <strong>Security Issues</strong>
+                        <ul style="margin-top: 8px; font-size: 13px; column-count: 2;">
+                            <li>Data breaches</li>
+                            <li>Injection attacks</li>
+                            <li>Authentication failures</li>
+                            <li>Access control issues</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Risk Register Format</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Column</th>
+                                <th>Description</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Risk Description</strong></td>
+                                <td>Clear, project-specific description</td>
+                                <td>User passwords stored in plain text</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Likelihood</strong></td>
+                                <td>Low / Medium / High</td>
+                                <td>High</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Impact</strong></td>
+                                <td>Low / Medium / High</td>
+                                <td>High</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Countermeasure</strong></td>
+                                <td>Specific risk control approach</td>
+                                <td>Implement bcrypt password hashing, enforce strong password policy, enable MFA</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="callout callout-warning">
+                    <div class="callout-title">Key Requirements</div>
+                    <ul>
+                        <li>Risks must be <strong>project-specific</strong>, not generic</li>
+                        <li>Countermeasures must be <strong>actionable and detailed</strong></li>
+                        <li>Cover <strong>all five risk categories</strong> comprehensively</li>
+                        <li>Stay within <strong>2-page limit</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Submission Details</h3>
+
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-title">Format Requirements</div>
+                        <ul>
+                            <li><strong>Document Type:</strong> Reflective portfolio</li>
+                            <li><strong>Evidence:</strong> Must include working links</li>
+                            <li><strong>Presentation:</strong> Professional formatting</li>
+                            <li><strong>Screenshots:</strong> Clear and readable</li>
+                            <li><strong>Word Counts:</strong> Strictly enforced</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Repository Access</div>
+                        <ul class="checklist">
+                            <li>GitLab maintainer access for team and lecturers</li>
+                            <li>Organized Microsoft Teams space</li>
+                            <li>Evidence form in "For Review" folder</li>
+                            <li>Weekly updates maintained</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- References & Further Reading Section -->
+        <section id="references" class="section">
+            <div class="section-intro">
+                <h2>References &amp; Further Reading</h2>
+                <p>Key sources and standards used throughout this module. These references provide essential background for understanding risk management, information security, quality assurance, and legal/ethical considerations in software development.</p>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">ISO 31000 &amp; Risk Management</h3>
+                <div class="card">
+                    <p style="margin-bottom: 16px;"><strong>Institute of Risk Management (2018)</strong> 'Standard Deviations: A Risk Practitioners Guide to ISO 31000 – 2018' (v2), London: The Institute of Risk Management.</p>
+                    <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Comprehensive guide to ISO 31000:2018 including risk management principles, framework components, and implementation guidance. Essential reading for understanding enterprise risk management.</p>
+
+                    <p style="margin-bottom: 16px;"><strong>ISO (2018)</strong> ISO 31000:2018 Risk management – Guidelines. Geneva: International Organization for Standardization.</p>
+                    <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">The international standard for risk management providing principles, a framework, and a process for managing risk.</p>
+
+                    <p style="margin-bottom: 16px;"><strong>ISO (2022)</strong> ISO 27005:2022 Information Security, Cybersecurity and Privacy Protection – Guidance on Managing Information Security Risks. Geneva: International Organization for Standardization.</p>
+                    <p style="font-size: 13px; color: var(--color-text-secondary); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Provides guidelines for managing information security risks aligned with ISO 27001 (Information Security Management Systems).</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Information Security &amp; OWASP</h3>
+                <div class="card">
+                    <p style="margin-bottom: 16px;"><strong>OWASP Foundation (2021)</strong> 'OWASP Top 10 2021 – The Ten Most Critical Web Application Security Risks'. Available at: <a href="https://owasp.org/Top10/" target="_blank" style="color: var(--cardiff-crimson);">https://owasp.org/Top10/</a></p>
+                    <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Regularly updated list of the most critical web application security risks. Essential reference for understanding common vulnerabilities and mitigation strategies.</p>
+
+                    <p style="margin-bottom: 16px;"><strong>OWASP Foundation (2022)</strong> 'API Security Top 10'. Available at: <a href="https://owasp.org/www-project-api-security/" target="_blank" style="color: var(--cardiff-crimson);">https://owasp.org/www-project-api-security/</a></p>
+                    <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Security risks specific to APIs and services, complementing the web application security guidance.</p>
+
+                    <p style="margin-bottom: 16px;"><strong>National Institute of Standards and Technology (NIST) (2019)</strong> 'Framework for Improving Critical Infrastructure Cybersecurity, Version 1.1'. Available at: <a href="https://www.nist.gov/cyberframework" target="_blank" style="color: var(--cardiff-crimson);">https://www.nist.gov/cyberframework</a></p>
+                    <p style="font-size: 13px; color: var(--color-text-secondary); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Comprehensive framework for managing cybersecurity risk and improving organizational resilience.</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Quality Assurance &amp; Agile</h3>
+                <div class="card">
+                    <p style="margin-bottom: 16px;"><strong>Schwaber, K. and Sutherland, J. (2020)</strong> 'The Scrum Guide: The Definitive Guide to Scrum: The Rules of the Game'. Available at: <a href="https://scrumguides.org/" target="_blank" style="color: var(--cardiff-crimson);">https://scrumguides.org/</a></p>
+                    <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Official guide to Scrum methodology, including sprints, roles, ceremonies, and best practices for Agile development.</p>
+
+                    <p style="margin-bottom: 16px;"><strong>Beck, K., Beedle, M., van Bennekum, A. et al. (2001)</strong> 'Manifesto for Agile Software Development'. Available at: <a href="https://agilemanifesto.org/" target="_blank" style="color: var(--cardiff-crimson);">https://agilemanifesto.org/</a></p>
+                    <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Foundational principles and values underlying Agile software development practices.</p>
+
+                    <p style="margin-bottom: 16px;"><strong>Atlassian (2023)</strong> 'Definition of Done: Agile software development'. Available at: <a href="https://www.atlassian.com/agile/scrum/definition-of-done" target="_blank" style="color: var(--cardiff-crimson);">https://www.atlassian.com/agile/scrum/definition-of-done</a></p>
+                    <p style="font-size: 13px; color: var(--color-text-secondary); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Practical guidance on creating and maintaining Definition of Done for development teams.</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Legal Framework &amp; Compliance</h3>
+                <div class="card">
+                    <p style="margin-bottom: 16px;"><strong>UK Parliament (1990)</strong> 'Computer Misuse Act 1990' (c.18). London: HMSO. Available at: <a href="https://www.legislation.gov.uk/ukpga/1990/18" target="_blank" style="color: var(--cardiff-crimson);">https://www.legislation.gov.uk/ukpga/1990/18</a></p>
+                    <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">UK legislation establishing criminal offenses related to unauthorized access to computer systems and data.</p>
+
+                    <p style="margin-bottom: 16px;"><strong>EUR-Lex (2016)</strong> 'Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data' (General Data Protection Regulation). Available at: <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" style="color: var(--cardiff-crimson);">https://eur-lex.europa.eu/eli/reg/2016/679/oj</a></p>
+                    <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">EU regulation establishing requirements for data protection and privacy, directly applicable in UK until Brexit and largely retained in UK law.</p>
+
+                    <p style="margin-bottom: 16px;"><strong>UK Parliament (2018)</strong> 'Data Protection Act 2018' (c.12). London: HMSO. Available at: <a href="https://www.legislation.gov.uk/ukpga/2018/12" target="_blank" style="color: var(--cardiff-crimson);">https://www.legislation.gov.uk/ukpga/2018/12</a></p>
+                    <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">UK legislation implementing GDPR requirements and establishing data protection framework.</p>
+
+                    <p style="margin-bottom: 16px;"><strong>HM Courts &amp; Tribunals Service (2024)</strong> 'Crown Prosecution Service – Guidance on Computer Misuse Act Offenses'. Available at: <a href="https://www.cps.gov.uk/" target="_blank" style="color: var(--cardiff-crimson);">https://www.cps.gov.uk/</a></p>
+                    <p style="font-size: 13px; color: var(--color-text-secondary); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Official prosecution guidance on computer crime legislation and enforcement.</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Professional Standards &amp; Ethics</h3>
+                <div class="card">
+                    <p style="margin-bottom: 16px;"><strong>BCS (2022)</strong> 'Code of Conduct for BCS Members'. Swindon: The British Computer Society. Available at: <a href="https://www.bcs.org/membership-and-registrations/member-conduct/bcs-code-of-conduct/" target="_blank" style="color: var(--cardiff-crimson);">https://www.bcs.org/membership-and-registrations/member-conduct/bcs-code-of-conduct/</a></p>
+                    <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Professional code establishing ethical standards and professional responsibilities for UK computing professionals.</p>
+
+                    <p style="margin-bottom: 16px;"><strong>ACM (Association for Computing Machinery) (2018)</strong> 'Code of Ethics and Professional Conduct'. Available at: <a href="https://www.acm.org/code-of-ethics" target="_blank" style="color: var(--cardiff-crimson);">https://www.acm.org/code-of-ethics</a></p>
+                    <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">International ethical framework and professional responsibilities for computing professionals, addressing public interest, professional competence, and integrity.</p>
+
+                    <p style="margin-bottom: 16px;"><strong>IEEE Computer Society (2018)</strong> 'Software Engineering Code of Ethics and Professional Practice'. Available at: <a href="https://www.computer.org/" target="_blank" style="color: var(--cardiff-crimson);">https://www.computer.org/</a></p>
+                    <p style="font-size: 13px; color: var(--color-text-secondary); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Professional ethical guidelines specific to software engineers and software development practices.</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Accessibility &amp; Web Standards</h3>
+                <div class="card">
+                    <p style="margin-bottom: 16px;"><strong>W3C (Web Accessibility Initiative) (2023)</strong> 'Web Content Accessibility Guidelines (WCAG) 2.1'. Available at: <a href="https://www.w3.org/WAI/WCAG21/quickref/" target="_blank" style="color: var(--cardiff-crimson);">https://www.w3.org/WAI/WCAG21/quickref/</a></p>
+                    <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">International guidelines for creating accessible web content for people with disabilities. Essential for inclusive software design.</p>
+
+                    <p style="margin-bottom: 16px;"><strong>UK Equality Act (2010)</strong> 'Equality Act 2010: Public Sector Equality Duty'. Available at: <a href="https://www.legislation.gov.uk/ukpga/2010/15" target="_blank" style="color: var(--cardiff-crimson);">https://www.legislation.gov.uk/ukpga/2010/15</a></p>
+                    <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">UK legislation requiring public sector organizations to consider equality and accessibility in service delivery.</p>
+
+                    <p style="margin-bottom: 16px;"><strong>GOV.UK Digital Service Standard (2024)</strong> 'Accessibility checklist'. Available at: <a href="https://www.gov.uk/guidance/accessibility-checklist" target="_blank" style="color: var(--cardiff-crimson);">https://www.gov.uk/guidance/accessibility-checklist</a></p>
+                    <p style="font-size: 13px; color: var(--color-text-secondary); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Practical UK government guidance on implementing accessibility requirements in digital services.</p>
+                </div>
+            </div>
+
+            <div class="callout callout-info" style="margin-top: 32px;">
+                <div class="callout-title">Using These References</div>
+                <p>All citations follow Harvard referencing format. When citing these sources in your own work, ensure you:</p>
+                <ul>
+                    <li>Include the full citation in your reference list</li>
+                    <li>Use proper in-text citations (Author, Year)</li>
+                    <li>Access URLs directly for the most current versions</li>
+                    <li>Check publication dates as standards and guidelines are regularly updated</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Tab navigation
+        const tabs = document.querySelectorAll('.nav-tab');
+        const sections = document.querySelectorAll('.section');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and sections
+                tabs.forEach(t => t.classList.remove('active'));
+                sections.forEach(s => s.classList.remove('active'));
+
+                // Add active class to clicked tab
+                tab.classList.add('active');
+
+                // Show corresponding section
+                const sectionId = tab.getAttribute('data-section');
+                document.getElementById(sectionId).classList.add('active');
+
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        // Expandable sections
+        const expandables = document.querySelectorAll('.expandable');
+
+        expandables.forEach(expandable => {
+            const header = expandable.querySelector('.expandable-header');
+
+            header.addEventListener('click', () => {
+                expandable.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>
