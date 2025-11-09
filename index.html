@@ -729,6 +729,394 @@
                     </div>
                 </div>
             </div>
+            <div class="subsection">
+                <h3 class="subsection-title">Risk Assessment Matrix - Practical Tool</h3>
+                <div class="card">
+                    <p>A risk assessment matrix is a practical tool for systematically identifying, analyzing, and prioritizing risks in your project. This section provides step-by-step instructions, a comprehensive example, and guidance for creating your own risk register for Part 3 of the assessment.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">How to Create and Use a Risk Assessment Matrix</div>
+                    <p style="margin-bottom: 16px;">Follow these steps to create an effective risk assessment matrix:</p>
+
+                    <div class="expandable">
+                        <div class="expandable-header">
+                            <span class="expandable-title">Step 1: Identify All Risks</span>
+                            <span class="expandable-icon">▼</span>
+                        </div>
+                        <div class="expandable-content">
+                            <div class="expandable-body">
+                                <p><strong>Systematically identify all potential risks that could affect your project, organization, or initiative.</strong></p>
+                                <p style="margin-top: 12px;">Consider risks across all categories: project, legal, ethical, security, and operational.</p>
+                                <p style="margin-top: 12px;"><strong>Example Approach:</strong> Brainstorm with team, review project scope, check constraints, consider dependencies</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable">
+                        <div class="expandable-header">
+                            <span class="expandable-title">Step 2: Describe Each Risk Clearly</span>
+                            <span class="expandable-icon">▼</span>
+                        </div>
+                        <div class="expandable-content">
+                            <div class="expandable-body">
+                                <p><strong>Write a clear, concise description of each risk that explains what could go wrong and why it matters.</strong></p>
+                                <p style="margin-top: 12px;"><strong>Poor Example:</strong> "Data problem"</p>
+                                <p style="margin-top: 8px;"><strong>Better Example:</strong> "Customer personal data exposed due to weak authentication in login system"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable">
+                        <div class="expandable-header">
+                            <span class="expandable-title">Step 3: Assess Likelihood</span>
+                            <span class="expandable-icon">▼</span>
+                        </div>
+                        <div class="expandable-content">
+                            <div class="expandable-body">
+                                <p><strong>Estimate the probability that this risk will occur.</strong></p>
+                                <ul style="margin-top: 12px;">
+                                    <li><strong>Low:</strong> &lt; 30% chance of occurring</li>
+                                    <li><strong>Medium:</strong> 30-70% chance of occurring</li>
+                                    <li><strong>High:</strong> &gt; 70% chance of occurring</li>
+                                </ul>
+                                <p style="margin-top: 12px;"><strong>Example:</strong> SQL injection attacks are common (High), key developer departure is medium probability (Medium)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable">
+                        <div class="expandable-header">
+                            <span class="expandable-title">Step 4: Assess Impact</span>
+                            <span class="expandable-icon">▼</span>
+                        </div>
+                        <div class="expandable-content">
+                            <div class="expandable-body">
+                                <p><strong>Evaluate the consequences if this risk occurs.</strong></p>
+                                <p style="margin-top: 12px;">Consider business impact, schedule impact, financial impact, and reputation damage.</p>
+                                <ul style="margin-top: 12px;">
+                                    <li><strong>Low:</strong> Minor effect, easily recoverable</li>
+                                    <li><strong>Medium:</strong> Moderate effect, requires effort to recover</li>
+                                    <li><strong>High:</strong> Severe effect, major business impact</li>
+                                </ul>
+                                <p style="margin-top: 12px;"><strong>Example:</strong> Data breach has High impact (regulatory fines, customer loss). Minor UI bug has Low impact (easily fixed)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable">
+                        <div class="expandable-header">
+                            <span class="expandable-title">Step 5: Determine Risk Level</span>
+                            <span class="expandable-icon">▼</span>
+                        </div>
+                        <div class="expandable-content">
+                            <div class="expandable-body">
+                                <p><strong>Combine likelihood and impact to determine the overall risk level using the matrix grid below.</strong></p>
+                                <p style="margin-top: 12px;">This helps prioritize which risks need immediate attention.</p>
+                                <p style="margin-top: 12px;"><strong>Example:</strong> High Likelihood + High Impact = CRITICAL. Low Likelihood + Low Impact = LOW</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable">
+                        <div class="expandable-header">
+                            <span class="expandable-title">Step 6: Develop Countermeasures</span>
+                            <span class="expandable-icon">▼</span>
+                        </div>
+                        <div class="expandable-content">
+                            <div class="expandable-body">
+                                <p><strong>For each risk, identify one or more specific mitigation strategies or countermeasures that reduce likelihood or impact.</strong></p>
+                                <p style="margin-top: 12px;"><strong>Example:</strong> For SQL injection: Use parameterized queries, input validation, WAF, regular security testing</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expandable">
+                        <div class="expandable-header">
+                            <span class="expandable-title">Step 7: Prioritize and Act</span>
+                            <span class="expandable-icon">▼</span>
+                        </div>
+                        <div class="expandable-content">
+                            <div class="expandable-body">
+                                <p><strong>Prioritize risks by level and take action.</strong></p>
+                                <ul style="margin-top: 12px;">
+                                    <li><strong>CRITICAL:</strong> Stop work and fix immediately</li>
+                                    <li><strong>HIGH:</strong> Plan mitigation this sprint</li>
+                                    <li><strong>MEDIUM:</strong> Monitor and plan</li>
+                                    <li><strong>LOW:</strong> Accept or defer</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Understanding Risk Levels</div>
+                    <p style="margin-bottom: 16px;">The matrix below shows how Likelihood and Impact combine to determine overall Risk Level:</p>
+
+                    <table style="margin-bottom: 20px;">
+                        <thead>
+                        <tr>
+                            <th style="width: 25%;">Likelihood / Impact</th>
+                            <th style="width: 25%;">Low Impact</th>
+                            <th style="width: 25%;">Medium Impact</th>
+                            <th style="width: 25%;">High Impact</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><strong>High Likelihood</strong><br><span style="font-size: 12px; color: var(--dark-charcoal);">&gt;70% chance</span></td>
+                            <td style="background-color: #FFF8E1;"><span class="badge badge-medium">MEDIUM</span></td>
+                            <td style="background-color: #FFF3E0;"><span class="badge badge-high">HIGH</span></td>
+                            <td style="background-color: #FFEBEE;"><span class="badge badge-critical">CRITICAL</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Medium Likelihood</strong><br><span style="font-size: 12px; color: var(--dark-charcoal);">30-70% chance</span></td>
+                            <td style="background-color: #E8F5E9;"><span class="badge badge-low">LOW</span></td>
+                            <td style="background-color: #FFF8E1;"><span class="badge badge-medium">MEDIUM</span></td>
+                            <td style="background-color: #FFF3E0;"><span class="badge badge-high">HIGH</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Low Likelihood</strong><br><span style="font-size: 12px; color: var(--dark-charcoal);">&lt;30% chance</span></td>
+                            <td style="background-color: #E8F5E9;"><span class="badge badge-low">LOW</span></td>
+                            <td style="background-color: #E8F5E9;"><span class="badge badge-low">LOW</span></td>
+                            <td style="background-color: #FFF8E1;"><span class="badge badge-medium">MEDIUM</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <h4 style="margin-top: 20px;">Risk Level Color Coding:</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 12px;">
+                        <div style="background-color: #FFEBEE; padding: 12px; border-radius: 6px; border-left: 4px solid #C62828;">
+                            <strong style="color: #C62828;">🔴 CRITICAL</strong>
+                            <p style="font-size: 13px; margin-top: 4px;">Immediate action required - stop work and address</p>
+                        </div>
+                        <div style="background-color: #FFF3E0; padding: 12px; border-radius: 6px; border-left: 4px solid #E65100;">
+                            <strong style="color: #E65100;">🟠 HIGH</strong>
+                            <p style="font-size: 13px; margin-top: 4px;">Urgent attention needed - plan and allocate resources</p>
+                        </div>
+                        <div style="background-color: #FFF8E1; padding: 12px; border-radius: 6px; border-left: 4px solid #F57F17;">
+                            <strong style="color: #F57F17;">🟡 MEDIUM</strong>
+                            <p style="font-size: 13px; margin-top: 4px;">Monitor closely and plan mitigation</p>
+                        </div>
+                        <div style="background-color: #E8F5E9; padding: 12px; border-radius: 6px; border-left: 4px solid #2E7D32;">
+                            <strong style="color: #2E7D32;">🟢 LOW</strong>
+                            <p style="font-size: 13px; margin-top: 4px;">Accept risk or implement simple controls</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Example Risk Assessment Matrix - Software Development Project</div>
+                    <p style="margin-bottom: 16px;">Here's a comprehensive example showing how to complete a risk matrix using realistic software development project examples:</p>
+
+                    <div style="overflow-x: auto;">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th style="width: 5%;">ID</th>
+                                <th style="width: 15%;">Risk</th>
+                                <th style="width: 20%;">Description</th>
+                                <th style="width: 10%;">Category</th>
+                                <th style="width: 8%;">Likelihood</th>
+                                <th style="width: 8%;">Impact</th>
+                                <th style="width: 10%;">Risk Level</th>
+                                <th style="width: 24%;">Countermeasure / Mitigation Strategy</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><strong>Team Member Departure</strong></td>
+                                <td>Key senior developer leaves mid-project</td>
+                                <td>Project</td>
+                                <td>Medium</td>
+                                <td>High</td>
+                                <td><span class="badge badge-high">HIGH</span></td>
+                                <td>Document code thoroughly, cross-train team members, create knowledge base, mentorship program</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><strong>SQL Injection Vulnerability</strong></td>
+                                <td>Unpatched SQL injection vulnerability discovered in live system allowing database access</td>
+                                <td>Security</td>
+                                <td>Medium</td>
+                                <td>High</td>
+                                <td><span class="badge badge-high">HIGH</span></td>
+                                <td>Use parameterized queries, input validation, regular security audits, Web Application Firewall (WAF), automated testing</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><strong>GDPR Violation</strong></td>
+                                <td>Personal data accessed without consent or stored insecurely, leading to regulatory fines</td>
+                                <td>Legal</td>
+                                <td>Low</td>
+                                <td>High</td>
+                                <td><span class="badge badge-high">HIGH</span></td>
+                                <td>Implement encryption, access controls, audit trails, data protection training, consent mechanisms</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td><strong>Accessibility Non-Compliance</strong></td>
+                                <td>Application fails WCAG 2.1 compliance, excluding users with disabilities and violating ethical standards</td>
+                                <td>Ethical</td>
+                                <td>Medium</td>
+                                <td>Medium</td>
+                                <td><span class="badge badge-medium">MEDIUM</span></td>
+                                <td>Accessibility audit, automated accessibility testing, developer training, inclusive design principles, WCAG compliance checks</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td><strong>Scope Creep</strong></td>
+                                <td>Feature requests and requirements expand project scope beyond initial estimates and timeline</td>
+                                <td>Project</td>
+                                <td>High</td>
+                                <td>Medium</td>
+                                <td><span class="badge badge-high">HIGH</span></td>
+                                <td>Formal change control process, clear stakeholder agreement, documented requirements, regular scope reviews</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td><strong>Inadequate Testing</strong></td>
+                                <td>Poor code coverage leads to undetected bugs and critical issues in production environment</td>
+                                <td>Project</td>
+                                <td>Medium</td>
+                                <td>High</td>
+                                <td><span class="badge badge-high">HIGH</span></td>
+                                <td>Test-Driven Development (TDD), minimum 80% code coverage, automated testing, CI/CD pipeline, regression testing</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td><strong>Data Breach - User Information</strong></td>
+                                <td>Customer personal information exposed due to security weakness, causing data loss and reputation damage</td>
+                                <td>Security</td>
+                                <td>Low</td>
+                                <td>High</td>
+                                <td><span class="badge badge-high">HIGH</span></td>
+                                <td>Data encryption (AES-256), access controls, MFA, penetration testing, incident response plan, security monitoring</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td><strong>Schedule Delay</strong></td>
+                                <td>Project delivery delayed beyond agreed timeline due to technical challenges or resource issues</td>
+                                <td>Project</td>
+                                <td>High</td>
+                                <td>Medium</td>
+                                <td><span class="badge badge-high">HIGH</span></td>
+                                <td>Regular progress tracking, buffer time in schedule, agile sprint adjustments, resource planning, early risk identification</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td><strong>Authentication Bypass</strong></td>
+                                <td>Weak authentication allows unauthorized users to access system and user data</td>
+                                <td>Security</td>
+                                <td>Medium</td>
+                                <td>High</td>
+                                <td><span class="badge badge-high">HIGH</span></td>
+                                <td>Multi-factor authentication (MFA), strong password policies, bcrypt hashing, session management, security audits</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td><strong>Code Quality Issues</strong></td>
+                                <td>Poor code maintainability and technical debt accumulation affecting future development</td>
+                                <td>Project</td>
+                                <td>Medium</td>
+                                <td>Medium</td>
+                                <td><span class="badge badge-medium">MEDIUM</span></td>
+                                <td>Code review standards, refactoring time allocated, architectural reviews, documentation requirements, design patterns</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td><strong>Budget Overrun</strong></td>
+                                <td>Project costs exceed approved budget due to scope changes or unforeseen expenses</td>
+                                <td>Project</td>
+                                <td>High</td>
+                                <td>Medium</td>
+                                <td><span class="badge badge-high">HIGH</span></td>
+                                <td>Detailed cost tracking, contingency reserve (10-15%), scope control, regular budget forecasting, resource optimization</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td><strong>Third-Party Library Vulnerability</strong></td>
+                                <td>Dependency contains known security vulnerability requiring urgent patch or replacement</td>
+                                <td>Security</td>
+                                <td>Medium</td>
+                                <td>Medium</td>
+                                <td><span class="badge badge-medium">MEDIUM</span></td>
+                                <td>Automated dependency scanning, regular updates, vulnerability monitoring tools, minimal dependencies, vendor monitoring</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">How to Use This Matrix for Your Part 3 Assessment</div>
+
+                    <div class="callout callout-info">
+                        <div class="callout-title">Your Risk Register Must Include:</div>
+                        <ul class="checklist">
+                            <li>Minimum 8-12 risks across the five required categories</li>
+                            <li>Clear risk descriptions specific to YOUR project</li>
+                            <li>Likelihood and Impact assessments with justification</li>
+                            <li>Specific, actionable countermeasures for each risk</li>
+                        </ul>
+                    </div>
+
+                    <h4 style="margin-top: 20px;">Creating Your Own Risk Matrix:</h4>
+                    <ol>
+                        <li><strong>Identify all risks</strong> relevant to your specific project/situation</li>
+                        <li><strong>Categorize each risk</strong> (Project, Legal, Ethical, Security, Social, Professional)</li>
+                        <li><strong>Describe each risk clearly</strong> - make it project-specific, not generic</li>
+                        <li><strong>Assess likelihood</strong> based on your project context</li>
+                        <li><strong>Assess impact</strong> considering business, schedule, and reputation effects</li>
+                        <li><strong>Determine risk level</strong> using the matrix</li>
+                        <li><strong>Develop countermeasures</strong> specific to reducing that risk</li>
+                        <li><strong>Document in professional table format</strong></li>
+                    </ol>
+
+                    <h4 style="margin-top: 20px;">For Distinction-Level Work:</h4>
+                    <div class="grid-2" style="margin-top: 12px;">
+                        <div style="background-color: #E8F5E9; padding: 16px; border-radius: 8px; border-left: 4px solid var(--success-green);">
+                            <strong style="color: var(--success-green);">✓ DO THIS</strong>
+                            <ul style="margin-top: 8px; font-size: 13px;">
+                                <li>Risks are thoughtfully identified and project-specific</li>
+                                <li>Likelihood and impact assessments are well-justified with reasoning</li>
+                                <li>Countermeasures are detailed and realistic, not generic</li>
+                                <li>Clear evidence of risk prioritization (based on risk level)</li>
+                                <li>Professional presentation in table format (max 2 pages)</li>
+                            </ul>
+                        </div>
+                        <div style="background-color: #FFEBEE; padding: 16px; border-radius: 8px; border-left: 4px solid var(--cardiff-crimson);">
+                            <strong style="color: var(--cardiff-crimson);">✗ AVOID THIS</strong>
+                            <ul style="margin-top: 8px; font-size: 13px;">
+                                <li>Generic risks copied from examples</li>
+                                <li>Vague descriptions like "security problem"</li>
+                                <li>Countermeasures that are too generic ("be careful")</li>
+                                <li>Missing justification for likelihood/impact</li>
+                                <li>Incomplete coverage of required risk categories</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="callout callout-success" style="margin-top: 20px;">
+                        <div class="callout-title">Tips for Success</div>
+                        <ul class="checklist">
+                            <li>Use the five risk categories required for assessment (Legal, Ethical, Social, Professional, Security)</li>
+                            <li>Make risks specific to YOUR project, not generic examples</li>
+                            <li>Ensure countermeasures are concrete and implementable</li>
+                            <li>Prioritize by risk level - focus effort on HIGH and CRITICAL risks</li>
+                            <li>Review ISO 31000 framework - your matrix should follow those principles</li>
+                            <li>Keep professional tone and clear formatting</li>
+                            <li>Refer back to this example for structure, but develop your own risks</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            
         </div>
 
         <div class="subsection">
