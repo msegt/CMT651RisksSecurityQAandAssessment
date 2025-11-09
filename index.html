@@ -21,7 +21,6 @@
             --border-grey: #BDC3C7;
             --success-green: #27AE60;
             --warning-orange: #E67E22;
-            --color-text-secondary: #668387;
         }
 
         body {
@@ -445,6 +444,67 @@
             }
         }
 
+        /* Scroll to top button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--cardiff-crimson);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+            z-index: 98;
+            border: none;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .scroll-to-top:active {
+            transform: scale(0.95);
+        }
+
+        .scroll-to-top:focus-visible {
+            outline: 2px solid var(--white);
+            outline-offset: 2px;
+        }
+
+        .scroll-to-top svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--white);
+        }
+
+        /* Mobile responsive adjustments */
+        @media (max-width: 768px) {
+            .scroll-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+
+            .scroll-to-top svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
         /* Print styles */
         @media print {
             .header,
@@ -459,6 +519,10 @@
 
             .expandable-content {
                 max-height: none !important;
+            }
+
+            .scroll-to-top {
+                display: none !important;
             }
         }
     </style>
@@ -510,7 +574,7 @@
 
                 <div style="text-align: center; margin: 24px 0;">
                     <div style="display: inline-block; max-width: 700px; width: 100%;">
-                        <img src="GovernanceTriangle.png" alt="Governance Triangle showing Executive Board, Portfolio, Programmes, Projects hierarchy with Business as Usual operations and connections between Corporate Organisation and Project Organisation" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+                        <img src="governance-triangle.png" alt="Governance Triangle showing Executive Board, Portfolio, Programmes, Projects hierarchy with Business as Usual operations and connections between Corporate Organisation and Project Organisation" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
                     </div>
                 </div>
 
@@ -772,7 +836,7 @@
 
                 <div style="text-align: center; margin: 24px 0;">
                     <div style="display: inline-block; max-width: 500px; width: 100%;">
-                        <img src="iso-iec-27005.png" alt="ISO/IEC 27005 Benefits diagram showing central red circle with five key benefits: manage information security risks, systematically manage vulnerabilities and threats, balance time and effort for risk identification, provides guidance on two risk assessment approaches, and ensure ISO 27001 compliance" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); border: 1px solid var(--border-grey);">
+                        <img src="iso27005-benefits.png" alt="ISO/IEC 27005 Benefits diagram showing central red circle with five key benefits: manage information security risks, systematically manage vulnerabilities and threats, balance time and effort for risk identification, provides guidance on two risk assessment approaches, and ensure ISO 27001 compliance" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); border: 1px solid var(--border-grey);">
                     </div>
                 </div>
 
@@ -818,6 +882,252 @@
                         <li>Balances control effectiveness with implementation effort</li>
                         <li>Supports both event-based and asset-based assessment approaches</li>
                         <li>Essential for compliance with ISO 27001 ISMS requirements</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <h3 class="subsection-title">ISO 31000 vs ISO 27005: Understanding the Relationship</h3>
+            <div class="card">
+                <p>While both ISO 31000 and ISO 27005 address risk management, they serve different but complementary purposes within organizations. Understanding their relationship is crucial for implementing comprehensive risk management strategies.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Comparison Table</div>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Aspect</th>
+                        <th>ISO 31000</th>
+                        <th>ISO 27005</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><strong>Purpose</strong></td>
+                        <td>Generic framework for enterprise risk management across all risk types</td>
+                        <td>Specific guidance for information security risk management</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Scope</strong></td>
+                        <td>Applies to all types of organizational risk (project, legal, strategic, operational, security, etc.)</td>
+                        <td>Focuses specifically on information security and cybersecurity risks</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Industry Application</strong></td>
+                        <td>Universal - applies across any industry and sector</td>
+                        <td>Universal - applies across any industry and sector</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Integration</strong></td>
+                        <td>Standalone framework or part of enterprise risk management</td>
+                        <td>Complements ISO 27001 (ISMS) and aligns with ISO 31000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Risk Categories</strong></td>
+                        <td>Project, Legal, Ethical, Operational, Strategic, Financial, etc.</td>
+                        <td>Information security, data protection, cybersecurity, privacy</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Process Model</strong></td>
+                        <td>6-step process: Context → Identify → Analyze → Evaluate → Treat → Monitor</td>
+                        <td>Based on ISO 31000 but specialized for security risk assessment</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Primary Users</strong></td>
+                        <td>Senior management, risk managers, project managers, strategic planners</td>
+                        <td>Information security teams, IT departments, compliance managers</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Standard Body</strong></td>
+                        <td>International Organization for Standardization (ISO)</td>
+                        <td>International Organization for Standardization (ISO)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Key Document</strong></td>
+                        <td>ISO 31000:2018 Risk Management - Guidelines</td>
+                        <td>ISO/IEC 27005:2022 Information Security Risk Management</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Assessment Approaches</strong></td>
+                        <td>Context-based, process-based</td>
+                        <td>Event-based AND Asset-based risk assessment</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <div class="card-title">How ISO 31000 and ISO 27005 Work Together</div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">ISO 31000: The Parent Framework</span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <ul class="checklist">
+                                <li>Sets overall risk management principles and structure</li>
+                                <li>Defines the general risk management process</li>
+                                <li>Applicable to all types of organizational risks</li>
+                                <li>Provides governance structure for risk management</li>
+                                <li>Ensures consistent risk approach across organization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">ISO 27005: The Specialized Application</span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <ul class="checklist">
+                                <li>Applies ISO 31000 principles specifically to information security</li>
+                                <li>Focuses on security risks, vulnerabilities, and threats</li>
+                                <li>Part of the ISO/IEC 27000 family for ISMS</li>
+                                <li>Provides deeper technical guidance on security risk assessment</li>
+                                <li>Offers specialized tools and techniques for security context</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">Integration Approach</span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <ul class="checklist">
+                                <li>Organizations implement ISO 31000 as enterprise framework</li>
+                                <li>Use ISO 27005 for information security risk management within that framework</li>
+                                <li>ISO 27005 risk management feeds into overall ISO 31000 risk register</li>
+                                <li>Information security risks identified via ISO 27005 are part of enterprise risks under ISO 31000</li>
+                                <li>Coordinated approach ensures no security risks are overlooked</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">Typical Organization Structure</span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <ul class="checklist">
+                                <li><strong>Risk Management Team:</strong> Manages ISO 31000 enterprise risk framework</li>
+                                <li><strong>Information Security Team:</strong> Manages ISO 27005 security-specific risks</li>
+                                <li>Both report to Risk Committee or Executive Board</li>
+                                <li>Coordinated approach ensures comprehensive risk management</li>
+                                <li>Regular communication between teams prevents gaps</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">When to Use Each Standard</div>
+
+                <div class="grid-3" style="margin-top: 20px;">
+                    <div style="background-color: var(--light-grey); padding: 20px; border-radius: 8px; border: 1px solid var(--border-grey);">
+                        <h4 style="color: var(--cardiff-crimson); margin-bottom: 12px;">Use ISO 31000 When:</h4>
+                        <ul class="checklist" style="font-size: 13px;">
+                            <li>You need an enterprise-wide risk management framework</li>
+                            <li>Managing multiple types of organizational risks</li>
+                            <li>Creating an organization-wide risk register</li>
+                            <li>Coordinating risk management across departments</li>
+                            <li>Aligning risk management with business strategy</li>
+                            <li>Meeting governance requirements at board level</li>
+                        </ul>
+                    </div>
+
+                    <div style="background-color: var(--light-grey); padding: 20px; border-radius: 8px; border: 1px solid var(--border-grey);">
+                        <h4 style="color: var(--cardiff-crimson); margin-bottom: 12px;">Use ISO 27005 When:</h4>
+                        <ul class="checklist" style="font-size: 13px;">
+                            <li>Establishing information security management system (ISO 27001)</li>
+                            <li>Assessing information security risks specifically</li>
+                            <li>Conducting security threat and vulnerability assessments</li>
+                            <li>Implementing security controls for data protection</li>
+                            <li>Meeting cybersecurity compliance requirements</li>
+                            <li>Conducting security risk audits</li>
+                        </ul>
+                    </div>
+
+                    <div style="background-color: var(--light-grey); padding: 20px; border-radius: 8px; border: 1px solid var(--border-grey);">
+                        <h4 style="color: var(--cardiff-crimson); margin-bottom: 12px;">Use Both Together When:</h4>
+                        <ul class="checklist" style="font-size: 13px;">
+                            <li>Implementing comprehensive organizational governance</li>
+                            <li>Ensuring information security risks are integrated with enterprise risks</li>
+                            <li>Meeting both general and security-specific compliance requirements</li>
+                            <li>Creating holistic risk management and security programs</li>
+                            <li>Developing Board-level risk dashboards including security risks</li>
+                            <li>Meeting regulatory requirements across multiple domains</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Real-World Example: E-Commerce Platform Development</div>
+
+                <div style="background-color: var(--light-grey); padding: 20px; border-radius: 8px; margin-top: 16px;">
+                    <p style="margin-bottom: 16px; font-weight: 600;">Scenario: A software development company is building a new e-commerce platform for a client.</p>
+
+                    <div style="background-color: var(--white); padding: 16px; border-radius: 8px; margin-bottom: 16px; border-left: 4px solid var(--professional-blue);">
+                        <h4 style="color: var(--professional-blue); margin-bottom: 12px;">ISO 31000 IDENTIFIES ALL ORGANIZATIONAL RISKS:</h4>
+                        <ul style="font-size: 13px;">
+                            <li><strong>Project risks:</strong> Schedule delays, resource constraints, technical complexity</li>
+                            <li><strong>Business risks:</strong> Market changes, competitive threats, partnership issues</li>
+                            <li><strong>Operational risks:</strong> Process failures, quality issues, supplier disruption</li>
+                            <li><strong>Financial risks:</strong> Budget overruns, cost overruns, ROI concerns</li>
+                            <li><strong>Reputational risks:</strong> Brand damage, customer dissatisfaction</li>
+                            <li><strong>INFORMATION SECURITY RISKS</strong> (as one category among many)</li>
+                        </ul>
+                    </div>
+
+                    <div style="background-color: var(--white); padding: 16px; border-radius: 8px; margin-bottom: 16px; border-left: 4px solid var(--cardiff-crimson);">
+                        <h4 style="color: var(--cardiff-crimson); margin-bottom: 12px;">ISO 27005 SPECIFICALLY MANAGES SECURITY RISKS:</h4>
+                        <ul style="font-size: 13px;">
+                            <li>Customer data breaches exposing personal information</li>
+                            <li>Unauthorized access to payment processing systems</li>
+                            <li>SQL injection attacks compromising the database</li>
+                            <li>Privacy violations affecting user data</li>
+                            <li>Authentication and encryption failures</li>
+                            <li>Man-in-the-middle attacks on data transmission</li>
+                        </ul>
+                    </div>
+
+                    <div style="background-color: var(--white); padding: 16px; border-radius: 8px; border-left: 4px solid var(--success-green);">
+                        <h4 style="color: var(--success-green); margin-bottom: 12px;">HOW THEY WORK TOGETHER:</h4>
+                        <ol style="font-size: 13px;">
+                            <li style="margin-bottom: 6px;">ISO 31000 identifies information security as a risk category</li>
+                            <li style="margin-bottom: 6px;">ISO 27005 provides detailed security risk assessment</li>
+                            <li style="margin-bottom: 6px;">Specific security risks (from ISO 27005) are documented in ISO 31000 risk register</li>
+                            <li style="margin-bottom: 6px;">Risk priorities are established considering both business impact and security criticality</li>
+                            <li style="margin-bottom: 6px;">Security controls (from ISO 27005) are implemented as risk treatments</li>
+                            <li style="margin-bottom: 6px;">Overall organizational risk is monitored at ISO 31000 level</li>
+                            <li>Information security risks are continuously monitored at ISO 27005 level</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="callout callout-success" style="margin-top: 20px;">
+                    <div class="callout-title">Key Integration Benefits</div>
+                    <ul class="checklist">
+                        <li>Comprehensive risk coverage across all organizational domains</li>
+                        <li>Security risks receive appropriate priority within broader business context</li>
+                        <li>Specialized security expertise applied where needed</li>
+                        <li>Executive leadership sees complete risk picture</li>
+                        <li>Coordinated risk treatments optimize resource allocation</li>
                     </ul>
                 </div>
             </div>
@@ -2077,13 +2387,13 @@
             <h3 class="subsection-title">ISO 31000 &amp; Risk Management</h3>
             <div class="card">
                 <p style="margin-bottom: 16px;"><strong>Institute of Risk Management (2018)</strong> 'Standard Deviations: A Risk Practitioners Guide to ISO 31000 – 2018' (v2), London: The Institute of Risk Management.</p>
-                <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Comprehensive guide to ISO 31000:2018 including risk management principles, framework components, and implementation guidance. Essential reading for understanding enterprise risk management.</p>
+                <p style="font-size: 13px; color: var(--dark-charcoal); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Comprehensive guide to ISO 31000:2018 including risk management principles, framework components, and implementation guidance. Essential reading for understanding enterprise risk management.</p>
 
                 <p style="margin-bottom: 16px;"><strong>ISO (2018)</strong> ISO 31000:2018 Risk management – Guidelines. Geneva: International Organization for Standardization.</p>
-                <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">The international standard for risk management providing principles, a framework, and a process for managing risk.</p>
+                <p style="font-size: 13px; color: var(--dark-charcoal); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">The international standard for risk management providing principles, a framework, and a process for managing risk.</p>
 
                 <p style="margin-bottom: 16px;"><strong>ISO (2022)</strong> ISO 27005:2022 Information Security, Cybersecurity and Privacy Protection – Guidance on Managing Information Security Risks. Geneva: International Organization for Standardization.</p>
-                <p style="font-size: 13px; color: var(--color-text-secondary); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Provides guidelines for managing information security risks aligned with ISO 27001 (Information Security Management Systems).</p>
+                <p style="font-size: 13px; color: var(--dark-charcoal); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Provides guidelines for managing information security risks aligned with ISO 27001 (Information Security Management Systems).</p>
             </div>
         </div>
 
@@ -2091,13 +2401,13 @@
             <h3 class="subsection-title">Information Security &amp; OWASP</h3>
             <div class="card">
                 <p style="margin-bottom: 16px;"><strong>OWASP Foundation (2021)</strong> 'OWASP Top 10 2021 – The Ten Most Critical Web Application Security Risks'. Available at: <a href="https://owasp.org/Top10/" target="_blank" style="color: var(--cardiff-crimson);">https://owasp.org/Top10/</a></p>
-                <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Regularly updated list of the most critical web application security risks. Essential reference for understanding common vulnerabilities and mitigation strategies.</p>
+                <p style="font-size: 13px; color: var(--dark-charcoal); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Regularly updated list of the most critical web application security risks. Essential reference for understanding common vulnerabilities and mitigation strategies.</p>
 
                 <p style="margin-bottom: 16px;"><strong>OWASP Foundation (2022)</strong> 'API Security Top 10'. Available at: <a href="https://owasp.org/www-project-api-security/" target="_blank" style="color: var(--cardiff-crimson);">https://owasp.org/www-project-api-security/</a></p>
-                <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Security risks specific to APIs and services, complementing the web application security guidance.</p>
+                <p style="font-size: 13px; color: var(--dark-charcoal); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Security risks specific to APIs and services, complementing the web application security guidance.</p>
 
                 <p style="margin-bottom: 16px;"><strong>National Institute of Standards and Technology (NIST) (2019)</strong> 'Framework for Improving Critical Infrastructure Cybersecurity, Version 1.1'. Available at: <a href="https://www.nist.gov/cyberframework" target="_blank" style="color: var(--cardiff-crimson);">https://www.nist.gov/cyberframework</a></p>
-                <p style="font-size: 13px; color: var(--color-text-secondary); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Comprehensive framework for managing cybersecurity risk and improving organizational resilience.</p>
+                <p style="font-size: 13px; color: var(--dark-charcoal); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Comprehensive framework for managing cybersecurity risk and improving organizational resilience.</p>
             </div>
         </div>
 
@@ -2105,13 +2415,13 @@
             <h3 class="subsection-title">Quality Assurance &amp; Agile</h3>
             <div class="card">
                 <p style="margin-bottom: 16px;"><strong>Schwaber, K. and Sutherland, J. (2020)</strong> 'The Scrum Guide: The Definitive Guide to Scrum: The Rules of the Game'. Available at: <a href="https://scrumguides.org/" target="_blank" style="color: var(--cardiff-crimson);">https://scrumguides.org/</a></p>
-                <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Official guide to Scrum methodology, including sprints, roles, ceremonies, and best practices for Agile development.</p>
+                <p style="font-size: 13px; color: var(--dark-charcoal); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Official guide to Scrum methodology, including sprints, roles, ceremonies, and best practices for Agile development.</p>
 
                 <p style="margin-bottom: 16px;"><strong>Beck, K., Beedle, M., van Bennekum, A. et al. (2001)</strong> 'Manifesto for Agile Software Development'. Available at: <a href="https://agilemanifesto.org/" target="_blank" style="color: var(--cardiff-crimson);">https://agilemanifesto.org/</a></p>
-                <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Foundational principles and values underlying Agile software development practices.</p>
+                <p style="font-size: 13px; color: var(--dark-charcoal); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Foundational principles and values underlying Agile software development practices.</p>
 
                 <p style="margin-bottom: 16px;"><strong>Atlassian (2023)</strong> 'Definition of Done: Agile software development'. Available at: <a href="https://www.atlassian.com/agile/scrum/definition-of-done" target="_blank" style="color: var(--cardiff-crimson);">https://www.atlassian.com/agile/scrum/definition-of-done</a></p>
-                <p style="font-size: 13px; color: var(--color-text-secondary); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Practical guidance on creating and maintaining Definition of Done for development teams.</p>
+                <p style="font-size: 13px; color: var(--dark-charcoal); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Practical guidance on creating and maintaining Definition of Done for development teams.</p>
             </div>
         </div>
 
@@ -2119,16 +2429,16 @@
             <h3 class="subsection-title">Legal Framework &amp; Compliance</h3>
             <div class="card">
                 <p style="margin-bottom: 16px;"><strong>UK Parliament (1990)</strong> 'Computer Misuse Act 1990' (c.18). London: HMSO. Available at: <a href="https://www.legislation.gov.uk/ukpga/1990/18" target="_blank" style="color: var(--cardiff-crimson);">https://www.legislation.gov.uk/ukpga/1990/18</a></p>
-                <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">UK legislation establishing criminal offenses related to unauthorized access to computer systems and data.</p>
+                <p style="font-size: 13px; color: var(--dark-charcoal); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">UK legislation establishing criminal offenses related to unauthorized access to computer systems and data.</p>
 
                 <p style="margin-bottom: 16px;"><strong>EUR-Lex (2016)</strong> 'Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data' (General Data Protection Regulation). Available at: <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" style="color: var(--cardiff-crimson);">https://eur-lex.europa.eu/eli/reg/2016/679/oj</a></p>
-                <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">EU regulation establishing requirements for data protection and privacy, directly applicable in UK until Brexit and largely retained in UK law.</p>
+                <p style="font-size: 13px; color: var(--dark-charcoal); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">EU regulation establishing requirements for data protection and privacy, directly applicable in UK until Brexit and largely retained in UK law.</p>
 
                 <p style="margin-bottom: 16px;"><strong>UK Parliament (2018)</strong> 'Data Protection Act 2018' (c.12). London: HMSO. Available at: <a href="https://www.legislation.gov.uk/ukpga/2018/12" target="_blank" style="color: var(--cardiff-crimson);">https://www.legislation.gov.uk/ukpga/2018/12</a></p>
-                <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">UK legislation implementing GDPR requirements and establishing data protection framework.</p>
+                <p style="font-size: 13px; color: var(--dark-charcoal); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">UK legislation implementing GDPR requirements and establishing data protection framework.</p>
 
                 <p style="margin-bottom: 16px;"><strong>HM Courts &amp; Tribunals Service (2024)</strong> 'Crown Prosecution Service – Guidance on Computer Misuse Act Offenses'. Available at: <a href="https://www.cps.gov.uk/" target="_blank" style="color: var(--cardiff-crimson);">https://www.cps.gov.uk/</a></p>
-                <p style="font-size: 13px; color: var(--color-text-secondary); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Official prosecution guidance on computer crime legislation and enforcement.</p>
+                <p style="font-size: 13px; color: var(--dark-charcoal); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Official prosecution guidance on computer crime legislation and enforcement.</p>
             </div>
         </div>
 
@@ -2136,13 +2446,13 @@
             <h3 class="subsection-title">Professional Standards &amp; Ethics</h3>
             <div class="card">
                 <p style="margin-bottom: 16px;"><strong>BCS (2022)</strong> 'Code of Conduct for BCS Members'. Swindon: The British Computer Society. Available at: <a href="https://www.bcs.org/membership-and-registrations/member-conduct/bcs-code-of-conduct/" target="_blank" style="color: var(--cardiff-crimson);">https://www.bcs.org/membership-and-registrations/member-conduct/bcs-code-of-conduct/</a></p>
-                <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Professional code establishing ethical standards and professional responsibilities for UK computing professionals.</p>
+                <p style="font-size: 13px; color: var(--dark-charcoal); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Professional code establishing ethical standards and professional responsibilities for UK computing professionals.</p>
 
                 <p style="margin-bottom: 16px;"><strong>ACM (Association for Computing Machinery) (2018)</strong> 'Code of Ethics and Professional Conduct'. Available at: <a href="https://www.acm.org/code-of-ethics" target="_blank" style="color: var(--cardiff-crimson);">https://www.acm.org/code-of-ethics</a></p>
-                <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">International ethical framework and professional responsibilities for computing professionals, addressing public interest, professional competence, and integrity.</p>
+                <p style="font-size: 13px; color: var(--dark-charcoal); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">International ethical framework and professional responsibilities for computing professionals, addressing public interest, professional competence, and integrity.</p>
 
                 <p style="margin-bottom: 16px;"><strong>IEEE Computer Society (2018)</strong> 'Software Engineering Code of Ethics and Professional Practice'. Available at: <a href="https://www.computer.org/" target="_blank" style="color: var(--cardiff-crimson);">https://www.computer.org/</a></p>
-                <p style="font-size: 13px; color: var(--color-text-secondary); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Professional ethical guidelines specific to software engineers and software development practices.</p>
+                <p style="font-size: 13px; color: var(--dark-charcoal); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Professional ethical guidelines specific to software engineers and software development practices.</p>
             </div>
         </div>
 
@@ -2150,13 +2460,13 @@
             <h3 class="subsection-title">Accessibility &amp; Web Standards</h3>
             <div class="card">
                 <p style="margin-bottom: 16px;"><strong>W3C (Web Accessibility Initiative) (2023)</strong> 'Web Content Accessibility Guidelines (WCAG) 2.1'. Available at: <a href="https://www.w3.org/WAI/WCAG21/quickref/" target="_blank" style="color: var(--cardiff-crimson);">https://www.w3.org/WAI/WCAG21/quickref/</a></p>
-                <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">International guidelines for creating accessible web content for people with disabilities. Essential for inclusive software design.</p>
+                <p style="font-size: 13px; color: var(--dark-charcoal); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">International guidelines for creating accessible web content for people with disabilities. Essential for inclusive software design.</p>
 
                 <p style="margin-bottom: 16px;"><strong>UK Equality Act (2010)</strong> 'Equality Act 2010: Public Sector Equality Duty'. Available at: <a href="https://www.legislation.gov.uk/ukpga/2010/15" target="_blank" style="color: var(--cardiff-crimson);">https://www.legislation.gov.uk/ukpga/2010/15</a></p>
-                <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">UK legislation requiring public sector organizations to consider equality and accessibility in service delivery.</p>
+                <p style="font-size: 13px; color: var(--dark-charcoal); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">UK legislation requiring public sector organizations to consider equality and accessibility in service delivery.</p>
 
                 <p style="margin-bottom: 16px;"><strong>GOV.UK Digital Service Standard (2024)</strong> 'Accessibility checklist'. Available at: <a href="https://www.gov.uk/guidance/accessibility-checklist" target="_blank" style="color: var(--cardiff-crimson);">https://www.gov.uk/guidance/accessibility-checklist</a></p>
-                <p style="font-size: 13px; color: var(--color-text-secondary); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Practical UK government guidance on implementing accessibility requirements in digital services.</p>
+                <p style="font-size: 13px; color: var(--dark-charcoal); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Practical UK government guidance on implementing accessibility requirements in digital services.</p>
             </div>
         </div>
 
@@ -2172,6 +2482,13 @@
         </div>
     </section>
 </main>
+
+<!-- Scroll to Top Button -->
+<button class="scroll-to-top" id="scrollToTopBtn" aria-label="Scroll to top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    </svg>
+</button>
 
 <script>
     // Tab navigation
@@ -2205,6 +2522,45 @@
         header.addEventListener('click', () => {
             expandable.classList.toggle('open');
         });
+    });
+
+    // Scroll to top button functionality
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    let isScrolling = false;
+
+    // Show/hide button based on scroll position
+    function handleScroll() {
+        if (!isScrolling) {
+            window.requestAnimationFrame(() => {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.add('visible');
+                } else {
+                    scrollToTopBtn.classList.remove('visible');
+                }
+                isScrolling = false;
+            });
+            isScrolling = true;
+        }
+    }
+
+    // Smooth scroll to top
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    // Event listeners
+    window.addEventListener('scroll', handleScroll);
+    scrollToTopBtn.addEventListener('click', scrollToTop);
+
+    // Keyboard accessibility
+    scrollToTopBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            scrollToTop();
+        }
     });
 </script>
 </body>
