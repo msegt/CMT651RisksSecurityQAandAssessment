@@ -21,6 +21,10 @@
             --border-grey: #BDC3C7;
             --success-green: #27AE60;
             --warning-orange: #E67E22;
+            --color-text-secondary: #2C3E50;
+            --color-bg-1: #ECF0F1;
+            --color-bg-3: #ECF0F1;
+            --color-bg-4: #ECF0F1;
         }
 
         body {
@@ -729,433 +733,394 @@
                     </div>
                 </div>
             </div>
-            <div class="subsection">
-                <h3 class="subsection-title">Risk Assessment Matrix - Practical Tool</h3>
-                <div class="card">
-                    <p>A risk assessment matrix is a practical tool for systematically identifying, analyzing, and prioritizing risks in your project. This section provides step-by-step instructions, a comprehensive example, and guidance for creating your own risk register for Part 3 of the assessment.</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-title">How to Create and Use a Risk Assessment Matrix</div>
-                    <p style="margin-bottom: 16px;">Follow these steps to create an effective risk assessment matrix:</p>
-
-                    <div class="expandable">
-                        <div class="expandable-header">
-                            <span class="expandable-title">Step 1: Identify All Risks</span>
-                            <span class="expandable-icon">▼</span>
-                        </div>
-                        <div class="expandable-content">
-                            <div class="expandable-body">
-                                <p><strong>Systematically identify all potential risks that could affect your project, organization, or initiative.</strong></p>
-                                <p style="margin-top: 12px;">Consider risks across all categories: project, legal, ethical, security, and operational.</p>
-                                <p style="margin-top: 12px;"><strong>Example Approach:</strong> Brainstorm with team, review project scope, check constraints, consider dependencies</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="expandable">
-                        <div class="expandable-header">
-                            <span class="expandable-title">Step 2: Describe Each Risk Clearly</span>
-                            <span class="expandable-icon">▼</span>
-                        </div>
-                        <div class="expandable-content">
-                            <div class="expandable-body">
-                                <p><strong>Write a clear, concise description of each risk that explains what could go wrong and why it matters.</strong></p>
-                                <p style="margin-top: 12px;"><strong>Poor Example:</strong> "Data problem"</p>
-                                <p style="margin-top: 8px;"><strong>Better Example:</strong> "Customer personal data exposed due to weak authentication in login system"</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="expandable">
-                        <div class="expandable-header">
-                            <span class="expandable-title">Step 3: Assess Likelihood</span>
-                            <span class="expandable-icon">▼</span>
-                        </div>
-                        <div class="expandable-content">
-                            <div class="expandable-body">
-                                <p><strong>Estimate the probability that this risk will occur.</strong></p>
-                                <ul style="margin-top: 12px;">
-                                    <li><strong>Low:</strong> &lt; 30% chance of occurring</li>
-                                    <li><strong>Medium:</strong> 30-70% chance of occurring</li>
-                                    <li><strong>High:</strong> &gt; 70% chance of occurring</li>
-                                </ul>
-                                <p style="margin-top: 12px;"><strong>Example:</strong> SQL injection attacks are common (High), key developer departure is medium probability (Medium)</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="expandable">
-                        <div class="expandable-header">
-                            <span class="expandable-title">Step 4: Assess Impact</span>
-                            <span class="expandable-icon">▼</span>
-                        </div>
-                        <div class="expandable-content">
-                            <div class="expandable-body">
-                                <p><strong>Evaluate the consequences if this risk occurs.</strong></p>
-                                <p style="margin-top: 12px;">Consider business impact, schedule impact, financial impact, and reputation damage.</p>
-                                <ul style="margin-top: 12px;">
-                                    <li><strong>Low:</strong> Minor effect, easily recoverable</li>
-                                    <li><strong>Medium:</strong> Moderate effect, requires effort to recover</li>
-                                    <li><strong>High:</strong> Severe effect, major business impact</li>
-                                </ul>
-                                <p style="margin-top: 12px;"><strong>Example:</strong> Data breach has High impact (regulatory fines, customer loss). Minor UI bug has Low impact (easily fixed)</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="expandable">
-                        <div class="expandable-header">
-                            <span class="expandable-title">Step 5: Determine Risk Level</span>
-                            <span class="expandable-icon">▼</span>
-                        </div>
-                        <div class="expandable-content">
-                            <div class="expandable-body">
-                                <p><strong>Combine likelihood and impact to determine the overall risk level using the matrix grid below.</strong></p>
-                                <p style="margin-top: 12px;">This helps prioritize which risks need immediate attention.</p>
-                                <p style="margin-top: 12px;"><strong>Example:</strong> High Likelihood + High Impact = CRITICAL. Low Likelihood + Low Impact = LOW</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="expandable">
-                        <div class="expandable-header">
-                            <span class="expandable-title">Step 6: Develop Countermeasures</span>
-                            <span class="expandable-icon">▼</span>
-                        </div>
-                        <div class="expandable-content">
-                            <div class="expandable-body">
-                                <p><strong>For each risk, identify one or more specific mitigation strategies or countermeasures that reduce likelihood or impact.</strong></p>
-                                <p style="margin-top: 12px;"><strong>Example:</strong> For SQL injection: Use parameterized queries, input validation, WAF, regular security testing</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="expandable">
-                        <div class="expandable-header">
-                            <span class="expandable-title">Step 7: Prioritize and Act</span>
-                            <span class="expandable-icon">▼</span>
-                        </div>
-                        <div class="expandable-content">
-                            <div class="expandable-body">
-                                <p><strong>Prioritize risks by level and take action.</strong></p>
-                                <ul style="margin-top: 12px;">
-                                    <li><strong>CRITICAL:</strong> Stop work and fix immediately</li>
-                                    <li><strong>HIGH:</strong> Plan mitigation this sprint</li>
-                                    <li><strong>MEDIUM:</strong> Monitor and plan</li>
-                                    <li><strong>LOW:</strong> Accept or defer</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-title">Understanding Risk Levels</div>
-                    <p style="margin-bottom: 16px;">The matrix below shows how Likelihood and Impact combine to determine overall Risk Level:</p>
-
-                    <table style="margin-bottom: 20px;">
-                        <thead>
-                        <tr>
-                            <th style="width: 25%;">Likelihood / Impact</th>
-                            <th style="width: 25%;">Low Impact</th>
-                            <th style="width: 25%;">Medium Impact</th>
-                            <th style="width: 25%;">High Impact</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td><strong>High Likelihood</strong><br><span style="font-size: 12px; color: var(--dark-charcoal);">&gt;70% chance</span></td>
-                            <td style="background-color: #FFF8E1;"><span class="badge badge-medium">MEDIUM</span></td>
-                            <td style="background-color: #FFF3E0;"><span class="badge badge-high">HIGH</span></td>
-                            <td style="background-color: #FFEBEE;"><span class="badge badge-critical">CRITICAL</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Medium Likelihood</strong><br><span style="font-size: 12px; color: var(--dark-charcoal);">30-70% chance</span></td>
-                            <td style="background-color: #E8F5E9;"><span class="badge badge-low">LOW</span></td>
-                            <td style="background-color: #FFF8E1;"><span class="badge badge-medium">MEDIUM</span></td>
-                            <td style="background-color: #FFF3E0;"><span class="badge badge-high">HIGH</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Low Likelihood</strong><br><span style="font-size: 12px; color: var(--dark-charcoal);">&lt;30% chance</span></td>
-                            <td style="background-color: #E8F5E9;"><span class="badge badge-low">LOW</span></td>
-                            <td style="background-color: #E8F5E9;"><span class="badge badge-low">LOW</span></td>
-                            <td style="background-color: #FFF8E1;"><span class="badge badge-medium">MEDIUM</span></td>
-                        </tr>
-                        </tbody>
-                    </table>
-
-                    <h4 style="margin-top: 20px;">Risk Level Color Coding:</h4>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 12px;">
-                        <div style="background-color: #FFEBEE; padding: 12px; border-radius: 6px; border-left: 4px solid #C62828;">
-                            <strong style="color: #C62828;">🔴 CRITICAL</strong>
-                            <p style="font-size: 13px; margin-top: 4px;">Immediate action required - stop work and address</p>
-                        </div>
-                        <div style="background-color: #FFF3E0; padding: 12px; border-radius: 6px; border-left: 4px solid #E65100;">
-                            <strong style="color: #E65100;">🟠 HIGH</strong>
-                            <p style="font-size: 13px; margin-top: 4px;">Urgent attention needed - plan and allocate resources</p>
-                        </div>
-                        <div style="background-color: #FFF8E1; padding: 12px; border-radius: 6px; border-left: 4px solid #F57F17;">
-                            <strong style="color: #F57F17;">🟡 MEDIUM</strong>
-                            <p style="font-size: 13px; margin-top: 4px;">Monitor closely and plan mitigation</p>
-                        </div>
-                        <div style="background-color: #E8F5E9; padding: 12px; border-radius: 6px; border-left: 4px solid #2E7D32;">
-                            <strong style="color: #2E7D32;">🟢 LOW</strong>
-                            <p style="font-size: 13px; margin-top: 4px;">Accept risk or implement simple controls</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-title">Example Risk Assessment Matrix - Software Development Project</div>
-                    <p style="margin-bottom: 16px;">Here's a comprehensive example showing how to complete a risk matrix using realistic software development project examples:</p>
-
-                    <div style="overflow-x: auto;">
-                        <table>
-                            <thead>
-                            <tr>
-                                <th style="width: 5%;">ID</th>
-                                <th style="width: 15%;">Risk</th>
-                                <th style="width: 20%;">Description</th>
-                                <th style="width: 10%;">Category</th>
-                                <th style="width: 8%;">Likelihood</th>
-                                <th style="width: 8%;">Impact</th>
-                                <th style="width: 10%;">Risk Level</th>
-                                <th style="width: 24%;">Countermeasure / Mitigation Strategy</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td><strong>Team Member Departure</strong></td>
-                                <td>Key senior developer leaves mid-project</td>
-                                <td>Project</td>
-                                <td>Medium</td>
-                                <td>High</td>
-                                <td><span class="badge badge-high">HIGH</span></td>
-                                <td>Document code thoroughly, cross-train team members, create knowledge base, mentorship program</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td><strong>SQL Injection Vulnerability</strong></td>
-                                <td>Unpatched SQL injection vulnerability discovered in live system allowing database access</td>
-                                <td>Security</td>
-                                <td>Medium</td>
-                                <td>High</td>
-                                <td><span class="badge badge-high">HIGH</span></td>
-                                <td>Use parameterized queries, input validation, regular security audits, Web Application Firewall (WAF), automated testing</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td><strong>GDPR Violation</strong></td>
-                                <td>Personal data accessed without consent or stored insecurely, leading to regulatory fines</td>
-                                <td>Legal</td>
-                                <td>Low</td>
-                                <td>High</td>
-                                <td><span class="badge badge-high">HIGH</span></td>
-                                <td>Implement encryption, access controls, audit trails, data protection training, consent mechanisms</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td><strong>Accessibility Non-Compliance</strong></td>
-                                <td>Application fails WCAG 2.1 compliance, excluding users with disabilities and violating ethical standards</td>
-                                <td>Ethical</td>
-                                <td>Medium</td>
-                                <td>Medium</td>
-                                <td><span class="badge badge-medium">MEDIUM</span></td>
-                                <td>Accessibility audit, automated accessibility testing, developer training, inclusive design principles, WCAG compliance checks</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td><strong>Scope Creep</strong></td>
-                                <td>Feature requests and requirements expand project scope beyond initial estimates and timeline</td>
-                                <td>Project</td>
-                                <td>High</td>
-                                <td>Medium</td>
-                                <td><span class="badge badge-high">HIGH</span></td>
-                                <td>Formal change control process, clear stakeholder agreement, documented requirements, regular scope reviews</td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td><strong>Inadequate Testing</strong></td>
-                                <td>Poor code coverage leads to undetected bugs and critical issues in production environment</td>
-                                <td>Project</td>
-                                <td>Medium</td>
-                                <td>High</td>
-                                <td><span class="badge badge-high">HIGH</span></td>
-                                <td>Test-Driven Development (TDD), minimum 80% code coverage, automated testing, CI/CD pipeline, regression testing</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td><strong>Data Breach - User Information</strong></td>
-                                <td>Customer personal information exposed due to security weakness, causing data loss and reputation damage</td>
-                                <td>Security</td>
-                                <td>Low</td>
-                                <td>High</td>
-                                <td><span class="badge badge-high">HIGH</span></td>
-                                <td>Data encryption (AES-256), access controls, MFA, penetration testing, incident response plan, security monitoring</td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td><strong>Schedule Delay</strong></td>
-                                <td>Project delivery delayed beyond agreed timeline due to technical challenges or resource issues</td>
-                                <td>Project</td>
-                                <td>High</td>
-                                <td>Medium</td>
-                                <td><span class="badge badge-high">HIGH</span></td>
-                                <td>Regular progress tracking, buffer time in schedule, agile sprint adjustments, resource planning, early risk identification</td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-                                <td><strong>Authentication Bypass</strong></td>
-                                <td>Weak authentication allows unauthorized users to access system and user data</td>
-                                <td>Security</td>
-                                <td>Medium</td>
-                                <td>High</td>
-                                <td><span class="badge badge-high">HIGH</span></td>
-                                <td>Multi-factor authentication (MFA), strong password policies, bcrypt hashing, session management, security audits</td>
-                            </tr>
-                            <tr>
-                                <td>10</td>
-                                <td><strong>Code Quality Issues</strong></td>
-                                <td>Poor code maintainability and technical debt accumulation affecting future development</td>
-                                <td>Project</td>
-                                <td>Medium</td>
-                                <td>Medium</td>
-                                <td><span class="badge badge-medium">MEDIUM</span></td>
-                                <td>Code review standards, refactoring time allocated, architectural reviews, documentation requirements, design patterns</td>
-                            </tr>
-                            <tr>
-                                <td>11</td>
-                                <td><strong>Budget Overrun</strong></td>
-                                <td>Project costs exceed approved budget due to scope changes or unforeseen expenses</td>
-                                <td>Project</td>
-                                <td>High</td>
-                                <td>Medium</td>
-                                <td><span class="badge badge-high">HIGH</span></td>
-                                <td>Detailed cost tracking, contingency reserve (10-15%), scope control, regular budget forecasting, resource optimization</td>
-                            </tr>
-                            <tr>
-                                <td>12</td>
-                                <td><strong>Third-Party Library Vulnerability</strong></td>
-                                <td>Dependency contains known security vulnerability requiring urgent patch or replacement</td>
-                                <td>Security</td>
-                                <td>Medium</td>
-                                <td>Medium</td>
-                                <td><span class="badge badge-medium">MEDIUM</span></td>
-                                <td>Automated dependency scanning, regular updates, vulnerability monitoring tools, minimal dependencies, vendor monitoring</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-title">How to Use This Matrix for Your Part 3 Assessment</div>
-
-                    <div class="callout callout-info">
-                        <div class="callout-title">Your Risk Register Must Include:</div>
-                        <ul class="checklist">
-                            <li>Minimum 8-12 risks across the five required categories</li>
-                            <li>Clear risk descriptions specific to YOUR project</li>
-                            <li>Likelihood and Impact assessments with justification</li>
-                            <li>Specific, actionable countermeasures for each risk</li>
-                        </ul>
-                    </div>
-
-                    <h4 style="margin-top: 20px;">Creating Your Own Risk Matrix:</h4>
-                    <ol>
-                        <li><strong>Identify all risks</strong> relevant to your specific project/situation</li>
-                        <li><strong>Categorize each risk</strong> (Project, Legal, Ethical, Security, Social, Professional)</li>
-                        <li><strong>Describe each risk clearly</strong> - make it project-specific, not generic</li>
-                        <li><strong>Assess likelihood</strong> based on your project context</li>
-                        <li><strong>Assess impact</strong> considering business, schedule, and reputation effects</li>
-                        <li><strong>Determine risk level</strong> using the matrix</li>
-                        <li><strong>Develop countermeasures</strong> specific to reducing that risk</li>
-                        <li><strong>Document in professional table format</strong></li>
-                    </ol>
-
-                    <h4 style="margin-top: 20px;">For Distinction-Level Work:</h4>
-                    <div class="grid-2" style="margin-top: 12px;">
-                        <div style="background-color: #E8F5E9; padding: 16px; border-radius: 8px; border-left: 4px solid var(--success-green);">
-                            <strong style="color: var(--success-green);">✓ DO THIS</strong>
-                            <ul style="margin-top: 8px; font-size: 13px;">
-                                <li>Risks are thoughtfully identified and project-specific</li>
-                                <li>Likelihood and impact assessments are well-justified with reasoning</li>
-                                <li>Countermeasures are detailed and realistic, not generic</li>
-                                <li>Clear evidence of risk prioritization (based on risk level)</li>
-                                <li>Professional presentation in table format (max 2 pages)</li>
-                            </ul>
-                        </div>
-                        <div style="background-color: #FFEBEE; padding: 16px; border-radius: 8px; border-left: 4px solid var(--cardiff-crimson);">
-                            <strong style="color: var(--cardiff-crimson);">✗ AVOID THIS</strong>
-                            <ul style="margin-top: 8px; font-size: 13px;">
-                                <li>Generic risks copied from examples</li>
-                                <li>Vague descriptions like "security problem"</li>
-                                <li>Countermeasures that are too generic ("be careful")</li>
-                                <li>Missing justification for likelihood/impact</li>
-                                <li>Incomplete coverage of required risk categories</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="callout callout-success" style="margin-top: 20px;">
-                        <div class="callout-title">Tips for Success</div>
-                        <ul class="checklist">
-                            <li>Use the five risk categories required for assessment (Legal, Ethical, Social, Professional, Security)</li>
-                            <li>Make risks specific to YOUR project, not generic examples</li>
-                            <li>Ensure countermeasures are concrete and implementable</li>
-                            <li>Prioritize by risk level - focus effort on HIGH and CRITICAL risks</li>
-                            <li>Review ISO 31000 framework - your matrix should follow those principles</li>
-                            <li>Keep professional tone and clear formatting</li>
-                            <li>Refer back to this example for structure, but develop your own risks</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            
-            
-            
         </div>
 
         <div class="subsection">
-            <h3 class="subsection-title">PAPA Framework - Information Ethics</h3>
+            <h3 class="subsection-title">Risk Assessment Matrix - Practical Tool</h3>
             <div class="card">
-                <p>Richard Mason's PAPA framework identifies four key ethical issues in the information age:</p>
-                <table style="margin-top: 20px;">
+                <p>A risk assessment matrix is a practical tool for systematically identifying, analyzing, and prioritizing risks in your project. This section provides step-by-step instructions, a comprehensive example, and guidance for creating your own risk register for Part 3 of the assessment.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-title">How to Create and Use a Risk Assessment Matrix</div>
+                <p style="margin-bottom: 16px;">Follow these steps to create an effective risk assessment matrix:</p>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">Step 1: Identify All Risks</span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>Systematically identify all potential risks that could affect your project, organization, or initiative.</strong></p>
+                            <p style="margin-top: 12px;">Consider risks across all categories: project, legal, ethical, security, and operational.</p>
+                            <p style="margin-top: 12px;"><strong>Example Approach:</strong> Brainstorm with team, review project scope, check constraints, consider dependencies</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">Step 2: Describe Each Risk Clearly</span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>Write a clear, concise description of each risk that explains what could go wrong and why it matters.</strong></p>
+                            <p style="margin-top: 12px;"><strong>Poor Example:</strong> "Data problem"</p>
+                            <p style="margin-top: 8px;"><strong>Better Example:</strong> "Customer personal data exposed due to weak authentication in login system"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">Step 3: Assess Likelihood</span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>Estimate the probability that this risk will occur.</strong></p>
+                            <ul style="margin-top: 12px;">
+                                <li><strong>Low:</strong> &lt; 30% chance of occurring</li>
+                                <li><strong>Medium:</strong> 30-70% chance of occurring</li>
+                                <li><strong>High:</strong> &gt; 70% chance of occurring</li>
+                            </ul>
+                            <p style="margin-top: 12px;"><strong>Example:</strong> SQL injection attacks are common (High), key developer departure is medium probability (Medium)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">Step 4: Assess Impact</span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>Evaluate the consequences if this risk occurs.</strong></p>
+                            <p style="margin-top: 12px;">Consider business impact, schedule impact, financial impact, and reputation damage.</p>
+                            <ul style="margin-top: 12px;">
+                                <li><strong>Low:</strong> Minor effect, easily recoverable</li>
+                                <li><strong>Medium:</strong> Moderate effect, requires effort to recover</li>
+                                <li><strong>High:</strong> Severe effect, major business impact</li>
+                            </ul>
+                            <p style="margin-top: 12px;"><strong>Example:</strong> Data breach has High impact (regulatory fines, customer loss). Minor UI bug has Low impact (easily fixed)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">Step 5: Determine Risk Level</span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>Combine likelihood and impact to determine the overall risk level using the matrix grid below.</strong></p>
+                            <p style="margin-top: 12px;">This helps prioritize which risks need immediate attention.</p>
+                            <p style="margin-top: 12px;"><strong>Example:</strong> High Likelihood + High Impact = CRITICAL. Low Likelihood + Low Impact = LOW</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">Step 6: Develop Countermeasures</span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>For each risk, identify one or more specific mitigation strategies or countermeasures that reduce likelihood or impact.</strong></p>
+                            <p style="margin-top: 12px;"><strong>Example:</strong> For SQL injection: Use parameterized queries, input validation, WAF, regular security testing</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expandable">
+                    <div class="expandable-header">
+                        <span class="expandable-title">Step 7: Prioritize and Act</span>
+                        <span class="expandable-icon">▼</span>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="expandable-body">
+                            <p><strong>Prioritize risks by level and take action.</strong></p>
+                            <ul style="margin-top: 12px;">
+                                <li><strong>CRITICAL:</strong> Stop work and fix immediately</li>
+                                <li><strong>HIGH:</strong> Plan mitigation this sprint</li>
+                                <li><strong>MEDIUM:</strong> Monitor and plan</li>
+                                <li><strong>LOW:</strong> Accept or defer</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Understanding Risk Levels</div>
+                <p style="margin-bottom: 16px;">The matrix below shows how Likelihood and Impact combine to determine overall Risk Level:</p>
+
+                <table style="margin-bottom: 20px;">
                     <thead>
                     <tr>
-                        <th>Dimension</th>
-                        <th>Key Question</th>
-                        <th>Best Practice</th>
+                        <th style="width: 25%;">Likelihood / Impact</th>
+                        <th style="width: 25%;">Low Impact</th>
+                        <th style="width: 25%;">Medium Impact</th>
+                        <th style="width: 25%;">High Impact</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td><strong>Privacy</strong></td>
-                        <td>What personal information must be revealed?</td>
-                        <td>Collect only necessary data, obtain explicit consent, secure storage and transmission</td>
+                        <td><strong>High Likelihood</strong><br><span style="font-size: 12px; color: var(--color-text-secondary);">&gt;70% chance</span></td>
+                        <td style="background-color: #FFF8E1;"><span class="badge badge-medium">MEDIUM</span></td>
+                        <td style="background-color: #FFF3E0;"><span class="badge badge-high">HIGH</span></td>
+                        <td style="background-color: #FFEBEE;"><span class="badge badge-critical">CRITICAL</span></td>
                     </tr>
                     <tr>
-                        <td><strong>Accuracy</strong></td>
-                        <td>Who is responsible for information accuracy?</td>
-                        <td>Input validation, regular audits, clear error handling, data quality processes</td>
+                        <td><strong>Medium Likelihood</strong><br><span style="font-size: 12px; color: var(--color-text-secondary);">30-70% chance</span></td>
+                        <td style="background-color: #E8F5E9;"><span class="badge badge-low">LOW</span></td>
+                        <td style="background-color: #FFF8E1;"><span class="badge badge-medium">MEDIUM</span></td>
+                        <td style="background-color: #FFF3E0;"><span class="badge badge-high">HIGH</span></td>
                     </tr>
                     <tr>
-                        <td><strong>Property</strong></td>
-                        <td>Who owns information?</td>
-                        <td>Respect intellectual property, proper licensing, clear attribution, ownership documentation</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Accessibility</strong></td>
-                        <td>What information should be accessible?</td>
-                        <td>WCAG compliance, multiple formats, clear policies, inclusive design</td>
+                        <td><strong>Low Likelihood</strong><br><span style="font-size: 12px; color: var(--color-text-secondary);">&lt;30% chance</span></td>
+                        <td style="background-color: #E8F5E9;"><span class="badge badge-low">LOW</span></td>
+                        <td style="background-color: #E8F5E9;"><span class="badge badge-low">LOW</span></td>
+                        <td style="background-color: #FFF8E1;"><span class="badge badge-medium">MEDIUM</span></td>
                     </tr>
                     </tbody>
                 </table>
+
+                <h4 style="margin-top: 20px;">Risk Level Color Coding:</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 12px;">
+                    <div style="background-color: #FFEBEE; padding: 12px; border-radius: 6px; border-left: 4px solid #C62828;">
+                        <strong style="color: #C62828;">🔴 CRITICAL</strong>
+                        <p style="font-size: 13px; margin-top: 4px;">Immediate action required - stop work and address</p>
+                    </div>
+                    <div style="background-color: #FFF3E0; padding: 12px; border-radius: 6px; border-left: 4px solid #E65100;">
+                        <strong style="color: #E65100;">🟠 HIGH</strong>
+                        <p style="font-size: 13px; margin-top: 4px;">Urgent attention needed - plan and allocate resources</p>
+                    </div>
+                    <div style="background-color: #FFF8E1; padding: 12px; border-radius: 6px; border-left: 4px solid #F57F17;">
+                        <strong style="color: #F57F17;">🟡 MEDIUM</strong>
+                        <p style="font-size: 13px; margin-top: 4px;">Monitor closely and plan mitigation</p>
+                    </div>
+                    <div style="background-color: #E8F5E9; padding: 12px; border-radius: 6px; border-left: 4px solid #2E7D32;">
+                        <strong style="color: #2E7D32;">🟢 LOW</strong>
+                        <p style="font-size: 13px; margin-top: 4px;">Accept risk or implement simple controls</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Example Risk Assessment Matrix - Software Development Project</div>
+                <p style="margin-bottom: 16px;">Here's a comprehensive example showing how to complete a risk matrix using realistic software development project examples:</p>
+
+                <div style="overflow-x: auto;">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th style="width: 5%;">ID</th>
+                            <th style="width: 15%;">Risk</th>
+                            <th style="width: 20%;">Description</th>
+                            <th style="width: 10%;">Category</th>
+                            <th style="width: 8%;">Likelihood</th>
+                            <th style="width: 8%;">Impact</th>
+                            <th style="width: 10%;">Risk Level</th>
+                            <th style="width: 24%;">Countermeasure / Mitigation Strategy</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><strong>Team Member Departure</strong></td>
+                            <td>Key senior developer leaves mid-project</td>
+                            <td>Project</td>
+                            <td>Medium</td>
+                            <td>High</td>
+                            <td><span class="badge badge-high">HIGH</span></td>
+                            <td>Document code thoroughly, cross-train team members, create knowledge base, mentorship program</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><strong>SQL Injection Vulnerability</strong></td>
+                            <td>Unpatched SQL injection vulnerability discovered in live system allowing database access</td>
+                            <td>Security</td>
+                            <td>Medium</td>
+                            <td>High</td>
+                            <td><span class="badge badge-high">HIGH</span></td>
+                            <td>Use parameterized queries, input validation, regular security audits, Web Application Firewall (WAF), automated testing</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><strong>GDPR Violation</strong></td>
+                            <td>Personal data accessed without consent or stored insecurely, leading to regulatory fines</td>
+                            <td>Legal</td>
+                            <td>Low</td>
+                            <td>High</td>
+                            <td><span class="badge badge-high">HIGH</span></td>
+                            <td>Implement encryption, access controls, audit trails, data protection training, consent mechanisms</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><strong>Accessibility Non-Compliance</strong></td>
+                            <td>Application fails WCAG 2.1 compliance, excluding users with disabilities and violating ethical standards</td>
+                            <td>Ethical</td>
+                            <td>Medium</td>
+                            <td>Medium</td>
+                            <td><span class="badge badge-medium">MEDIUM</span></td>
+                            <td>Accessibility audit, automated accessibility testing, developer training, inclusive design principles, WCAG compliance checks</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><strong>Scope Creep</strong></td>
+                            <td>Feature requests and requirements expand project scope beyond initial estimates and timeline</td>
+                            <td>Project</td>
+                            <td>High</td>
+                            <td>Medium</td>
+                            <td><span class="badge badge-high">HIGH</span></td>
+                            <td>Formal change control process, clear stakeholder agreement, documented requirements, regular scope reviews</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td><strong>Inadequate Testing</strong></td>
+                            <td>Poor code coverage leads to undetected bugs and critical issues in production environment</td>
+                            <td>Project</td>
+                            <td>Medium</td>
+                            <td>High</td>
+                            <td><span class="badge badge-high">HIGH</span></td>
+                            <td>Test-Driven Development (TDD), minimum 80% code coverage, automated testing, CI/CD pipeline, regression testing</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td><strong>Data Breach - User Information</strong></td>
+                            <td>Customer personal information exposed due to security weakness, causing data loss and reputation damage</td>
+                            <td>Security</td>
+                            <td>Low</td>
+                            <td>High</td>
+                            <td><span class="badge badge-high">HIGH</span></td>
+                            <td>Data encryption (AES-256), access controls, MFA, penetration testing, incident response plan, security monitoring</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td><strong>Schedule Delay</strong></td>
+                            <td>Project delivery delayed beyond agreed timeline due to technical challenges or resource issues</td>
+                            <td>Project</td>
+                            <td>High</td>
+                            <td>Medium</td>
+                            <td><span class="badge badge-high">HIGH</span></td>
+                            <td>Regular progress tracking, buffer time in schedule, agile sprint adjustments, resource planning, early risk identification</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td><strong>Authentication Bypass</strong></td>
+                            <td>Weak authentication allows unauthorized users to access system and user data</td>
+                            <td>Security</td>
+                            <td>Medium</td>
+                            <td>High</td>
+                            <td><span class="badge badge-high">HIGH</span></td>
+                            <td>Multi-factor authentication (MFA), strong password policies, bcrypt hashing, session management, security audits</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td><strong>Code Quality Issues</strong></td>
+                            <td>Poor code maintainability and technical debt accumulation affecting future development</td>
+                            <td>Project</td>
+                            <td>Medium</td>
+                            <td>Medium</td>
+                            <td><span class="badge badge-medium">MEDIUM</span></td>
+                            <td>Code review standards, refactoring time allocated, architectural reviews, documentation requirements, design patterns</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td><strong>Budget Overrun</strong></td>
+                            <td>Project costs exceed approved budget due to scope changes or unforeseen expenses</td>
+                            <td>Project</td>
+                            <td>High</td>
+                            <td>Medium</td>
+                            <td><span class="badge badge-high">HIGH</span></td>
+                            <td>Detailed cost tracking, contingency reserve (10-15%), scope control, regular budget forecasting, resource optimization</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td><strong>Third-Party Library Vulnerability</strong></td>
+                            <td>Dependency contains known security vulnerability requiring urgent patch or replacement</td>
+                            <td>Security</td>
+                            <td>Medium</td>
+                            <td>Medium</td>
+                            <td><span class="badge badge-medium">MEDIUM</span></td>
+                            <td>Automated dependency scanning, regular updates, vulnerability monitoring tools, minimal dependencies, vendor monitoring</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">How to Use This Matrix for Your Part 3 Assessment</div>
+
+                <div class="callout callout-info">
+                    <div class="callout-title">Your Risk Register Must Include:</div>
+                    <ul class="checklist">
+                        <li>Minimum 8-12 risks across the five required categories</li>
+                        <li>Clear risk descriptions specific to YOUR project</li>
+                        <li>Likelihood and Impact assessments with justification</li>
+                        <li>Specific, actionable countermeasures for each risk</li>
+                    </ul>
+                </div>
+
+                <h4 style="margin-top: 20px;">Creating Your Own Risk Matrix:</h4>
+                <ol>
+                    <li><strong>Identify all risks</strong> relevant to your specific project/situation</li>
+                    <li><strong>Categorize each risk</strong> (Project, Legal, Ethical, Security, Social, Professional)</li>
+                    <li><strong>Describe each risk clearly</strong> - make it project-specific, not generic</li>
+                    <li><strong>Assess likelihood</strong> based on your project context</li>
+                    <li><strong>Assess impact</strong> considering business, schedule, and reputation effects</li>
+                    <li><strong>Determine risk level</strong> using the matrix</li>
+                    <li><strong>Develop countermeasures</strong> specific to reducing that risk</li>
+                    <li><strong>Document in professional table format</strong></li>
+                </ol>
+
+                <h4 style="margin-top: 20px;">For Distinction-Level Work:</h4>
+                <div class="grid-2" style="margin-top: 12px;">
+                    <div style="background-color: #E8F5E9; padding: 16px; border-radius: 8px; border-left: 4px solid var(--success-green);">
+                        <strong style="color: var(--success-green);">✓ DO THIS</strong>
+                        <ul style="margin-top: 8px; font-size: 13px;">
+                            <li>Risks are thoughtfully identified and project-specific</li>
+                            <li>Likelihood and impact assessments are well-justified with reasoning</li>
+                            <li>Countermeasures are detailed and realistic, not generic</li>
+                            <li>Clear evidence of risk prioritization (based on risk level)</li>
+                            <li>Professional presentation in table format (max 2 pages)</li>
+                        </ul>
+                    </div>
+                    <div style="background-color: #FFEBEE; padding: 16px; border-radius: 8px; border-left: 4px solid var(--cardiff-crimson);">
+                        <strong style="color: var(--cardiff-crimson);">✗ AVOID THIS</strong>
+                        <ul style="margin-top: 8px; font-size: 13px;">
+                            <li>Generic risks copied from examples</li>
+                            <li>Vague descriptions like "security problem"</li>
+                            <li>Countermeasures that are too generic ("be careful")</li>
+                            <li>Missing justification for likelihood/impact</li>
+                            <li>Incomplete coverage of required risk categories</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="callout callout-success" style="margin-top: 20px;">
+                    <div class="callout-title">Tips for Success</div>
+                    <ul class="checklist">
+                        <li>Use the five risk categories required for assessment (Legal, Ethical, Social, Professional, Security)</li>
+                        <li>Make risks specific to YOUR project, not generic examples</li>
+                        <li>Ensure countermeasures are concrete and implementable</li>
+                        <li>Prioritize by risk level - focus effort on HIGH and CRITICAL risks</li>
+                        <li>Review ISO 31000 framework - your matrix should follow those principles</li>
+                        <li>Keep professional tone and clear formatting</li>
+                        <li>Refer back to this example for structure, but develop your own risks</li>
+                    </ul>
+                </div>
             </div>
         </div>
+
+
     </section>
 
     <!-- Security Section -->
@@ -1426,7 +1391,7 @@
                 <div class="card-title">When to Use Each Standard</div>
 
                 <div class="grid-3" style="margin-top: 20px;">
-                    <div style="background-color: var(--light-grey); padding: 20px; border-radius: 8px; border: 1px solid var(--border-grey);">
+                    <div style="background-color: var(--color-bg-1); padding: 20px; border-radius: 8px; border: 1px solid var(--border-grey);">
                         <h4 style="color: var(--cardiff-crimson); margin-bottom: 12px;">Use ISO 31000 When:</h4>
                         <ul class="checklist" style="font-size: 13px;">
                             <li>You need an enterprise-wide risk management framework</li>
@@ -1438,7 +1403,7 @@
                         </ul>
                     </div>
 
-                    <div style="background-color: var(--light-grey); padding: 20px; border-radius: 8px; border: 1px solid var(--border-grey);">
+                    <div style="background-color: var(--color-bg-4); padding: 20px; border-radius: 8px; border: 1px solid var(--border-grey);">
                         <h4 style="color: var(--cardiff-crimson); margin-bottom: 12px;">Use ISO 27005 When:</h4>
                         <ul class="checklist" style="font-size: 13px;">
                             <li>Establishing information security management system (ISO 27001)</li>
@@ -1450,7 +1415,7 @@
                         </ul>
                     </div>
 
-                    <div style="background-color: var(--light-grey); padding: 20px; border-radius: 8px; border: 1px solid var(--border-grey);">
+                    <div style="background-color: var(--color-bg-3); padding: 20px; border-radius: 8px; border: 1px solid var(--border-grey);">
                         <h4 style="color: var(--cardiff-crimson); margin-bottom: 12px;">Use Both Together When:</h4>
                         <ul class="checklist" style="font-size: 13px;">
                             <li>Implementing comprehensive organizational governance</li>
@@ -2143,6 +2108,33 @@
                 </ul>
             </div>
         </div>
+
+        <div class="subsection">
+            <h3 class="subsection-title">Accessibility &amp; Inclusive Design</h3>
+            <div class="card">
+                <div class="card-content">
+                    <p>Building software that is usable by everyone, including people with disabilities.</p>
+
+                    <h4 style="margin-top: 20px; margin-bottom: 12px; font-weight: 600;">WCAG Principles (POUR):</h4>
+                    <ul>
+                        <li><strong>Perceivable:</strong> Information must be presentable in ways users can perceive (text alternatives, captions, adaptable content)</li>
+                        <li><strong>Operable:</strong> UI components must be operable (keyboard accessible, sufficient time, no seizure-inducing content)</li>
+                        <li><strong>Understandable:</strong> Information and operation must be understandable (readable, predictable, input assistance)</li>
+                        <li><strong>Robust:</strong> Content must work with current and future technologies (valid markup, compatible with assistive technologies)</li>
+                    </ul>
+
+                    <h4 style="margin-top: 20px; margin-bottom: 12px; font-weight: 600;">Key Considerations:</h4>
+                    <ul>
+                        <li>Semantic HTML for screen readers</li>
+                        <li>Sufficient color contrast ratios</li>
+                        <li>Keyboard navigation support</li>
+                        <li>Alternative text for images</li>
+                        <li>Responsive design for various devices</li>
+                        <li>Clear error messages and form validation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Legal & Ethics Section -->
@@ -2150,6 +2142,44 @@
         <div class="section-intro">
             <h2>Legal &amp; Ethical Considerations</h2>
             <p>Understanding legal obligations, regulatory compliance, and professional ethics in software development.</p>
+        </div>
+
+        <div class="subsection">
+            <h3 class="subsection-title">PAPA Framework - Information Ethics</h3>
+            <div class="card">
+                <p>Richard Mason's PAPA framework identifies four key ethical issues in the information age:</p>
+                <table style="margin-top: 20px;">
+                    <thead>
+                    <tr>
+                        <th>Dimension</th>
+                        <th>Key Question</th>
+                        <th>Best Practice</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><strong>Privacy</strong></td>
+                        <td>What personal information must be revealed?</td>
+                        <td>Collect only necessary data, obtain explicit consent, secure storage and transmission</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Accuracy</strong></td>
+                        <td>Who is responsible for information accuracy?</td>
+                        <td>Input validation, regular audits, clear error handling, data quality processes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Property</strong></td>
+                        <td>Who owns information?</td>
+                        <td>Respect intellectual property, proper licensing, clear attribution, ownership documentation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Accessibility</strong></td>
+                        <td>What information should be accessible?</td>
+                        <td>WCAG compliance, multiple formats, clear policies, inclusive design</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <div class="subsection">
@@ -2399,14 +2429,79 @@
             <p>Comprehensive guide to CMT651 assessment components, requirements, and submission criteria.</p>
         </div>
 
+        <!-- Learning Outcomes -->
+        <div class="subsection">
+            <h3 class="subsection-title">Learning Outcomes</h3>
+            <div class="card">
+                <p style="margin-bottom: 16px;">The learning outcomes for this assessment are as follows:</p>
+                <ul>
+                    <li><strong>LO1.</strong> Create user-valued requirements for a software-based system, critically analysing the associated issues</li>
+                    <li><strong>LO2.</strong> Analyse, apply and justify appropriate source code control workflows</li>
+                    <li><strong>LO3.</strong> Apply disciplines to the production of quality source code and other artefacts and use modern tools effectively in this context</li>
+                    <li><strong>LO4.</strong> Critically appraise and apply modern software development methodologies</li>
+                    <li><strong>LO5.</strong> Critically evaluate legal, ethical, social, professional and security risks and propose appropriate countermeasures to manage these</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Key Assessment Information -->
+        <div class="subsection">
+            <h3 class="subsection-title">Assessment Key Information</h3>
+            <div class="card">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td style="width: 30%;"><strong>Module Code:</strong></td>
+                        <td>CMT651</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Module Title:</strong></td>
+                        <td>Agile Software Development</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Module Leader:</strong></td>
+                        <td>Dr Maria Jose Galvez Trigo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Module Moderator:</strong></td>
+                        <td>Dr James Osborne</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Assessment Title:</strong></td>
+                        <td>Reflective Portfolio</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Assessment Number:</strong></td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Assessment Weighting:</strong></td>
+                        <td>100%</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <h4 style="margin-top: 20px;">Assessment Limits:</h4>
+                <ul>
+                    <li>Evidence of contribution form: No page limit</li>
+                    <li>Reflective portfolio Part 1: 1000 words</li>
+                    <li>Reflective portfolio Part 2: 1500 words</li>
+                    <li>Risk register: 2-page table</li>
+                </ul>
+
+                <h4 style="margin-top: 20px;">Submission Files:</h4>
+                <ul>
+                    <li>Reflective Portfolio (PDF): <code>[StudentNumber]ReflectivePortfolio.pdf</code></li>
+                    <li>Evidence of Contribution Form (Word): <code>[StudentNumber]ContributionEvidence.docx</code></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Assessment Context -->
         <div class="callout callout-info">
-            <div class="callout-title">Assessment Structure Overview</div>
-            <p>The module assessment consists of three parts:</p>
-            <ul>
-                <li><strong>Part 1:</strong> Evidence of Individual Contribution (40%)</li>
-                <li><strong>Part 2:</strong> Reflection on Team Process (40%)</li>
-                <li><strong>Part 3:</strong> Risk Register (20%)</li>
-            </ul>
+            <div class="callout-title">Assessment Context</div>
+            <p>In weeks 8-11 you will be developing a working prototype solution for your client-based project. Your team will aim to deliver a quality solution that meets the real needs of the various stakeholders through working professionally and collaboratively with other team members to achieve effective management of the project.</p>
+            <p style="margin-top: 12px;">This assessment, for module CMT651, focuses on the aspects of the project pertaining to Agile Software Development practices, developing the requirements and managing the project process. The development of a quality solution to meet the real needs of various stakeholders will be assessed in the other modules.</p>
         </div>
 
         <div class="subsection">
@@ -2417,31 +2512,31 @@
                 <p>This part demonstrates your significant contribution to the team's project process and deliverables. It consists of three components:</p>
                 <ul style="margin-top: 12px;">
                     <li><strong>1a:</strong> Evidence of Contribution to Project Process</li>
-                    <li><strong>1b:</strong> Evidence of Competence in Developing User-Valued Requirements (400 words)</li>
-                    <li><strong>1c:</strong> Evidence of Competence in Evaluating Merge Requests (400 words)</li>
+                    <li><strong>1b:</strong> Evidence of Competence in Developing User-Valued Requirements (1000 words)</li>
+                    <li><strong>1c:</strong> Evidence of Competence in Evaluating Merge Requests (1000 words)</li>
                 </ul>
             </div>
 
             <div class="expandable">
                 <div class="expandable-header">
-                    <span class="expandable-title">1a - Process Deliverables Contribution</span>
+                    <span class="expandable-title">1a - Evidence of Individual Contribution to the Project Process</span>
                     <span class="expandable-icon">▼</span>
                 </div>
                 <div class="expandable-content">
                     <div class="expandable-body">
-                        <h4>What to Demonstrate:</h4>
-                        <p>Significant contribution to Scrum process management and source code control workflow.</p>
+                        <p>The evidence base for this will be your contributions to process deliverables as shown in your team's GitLab and Microsoft Teams space. Please make sure that all team members and lecturers have maintainer access to these.</p>
 
-                        <h4 style="margin-top: 16px;">Evidence Sources:</h4>
+                        <p style="margin-top: 16px;">You will be asked to fill in an <strong>Evidence of Contribution Form</strong> to show how you have contributed to the project and provide working links to your product and process deliverables in GitLab and Microsoft Teams.</p>
+
+                        <p style="margin-top: 16px;">During weeks 8-11, the Teaching Team will be holding weekly Review Sessions with each team to discuss their progress on the client project. Some teams will be allocated to have their review session on Mondays and others on Thursdays. This will be announced in advance via the module's Teams channel.</p>
+
+                        <div class="callout callout-error" style="margin-top: 16px;">
+                            <div class="callout-title">⚠️ IMPORTANT</div>
+                            <p>Make sure the Evidence of Contribution Form is updated <strong>on the day before each review session</strong> and included in your Microsoft Teams space in a folder called <strong>'For Review'</strong>.</p>
+                        </div>
+
+                        <h4 style="margin-top: 20px;">Process Deliverables Include:</h4>
                         <ul class="checklist">
-                            <li><strong>GitLab Repositories:</strong> Teaching team must have maintainer access</li>
-                            <li><strong>Microsoft Teams Space:</strong> Organized with appropriate folders</li>
-                            <li><strong>Evidence of Contribution Form:</strong> Updated weekly</li>
-                            <li><strong>Weekly Review Sessions:</strong> Monday meetings with teaching team</li>
-                        </ul>
-
-                        <h4 style="margin-top: 16px;">Process Deliverables Include:</h4>
-                        <ul>
                             <li>Team working agreements</li>
                             <li>User stories with acceptance criteria</li>
                             <li>Sprint plans and daily scrum records</li>
@@ -2449,58 +2544,52 @@
                             <li>Sprint reviews and retrospectives</li>
                             <li>Risk register updates</li>
                         </ul>
-
-                        <div class="callout callout-warning" style="margin-top: 16px;">
-                            <div class="callout-title">Critical Requirement</div>
-                            <p>The Evidence of Contribution Form must be updated <strong>the day before</strong> your weekly review meeting.</p>
-                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="expandable">
                 <div class="expandable-header">
-                    <span class="expandable-title">1b - User Story Competence (400 words)</span>
+                    <span class="expandable-title">1b - Evidence of Competence in Developing User-Valued Requirements (1000 words)</span>
                     <span class="expandable-icon">▼</span>
                 </div>
                 <div class="expandable-content">
                     <div class="expandable-body">
-                        <h4>Requirements:</h4>
-                        <ul class="checklist">
-                            <li>Provide <strong>ONE best example</strong> of your competence</li>
-                            <li>Include the user story with acceptance criteria</li>
-                            <li>Ensure clear user value is articulated</li>
-                            <li>Include screenshots and GitLab issue link</li>
-                        </ul>
+                        <p>Provide <strong>ONE example</strong> that best shows <strong>YOUR</strong> competence in writing a user story with acceptance criteria to provide value for a user.</p>
 
-                        <h4 style="margin-top: 16px;">Critical Analysis Using INVEST:</h4>
+                        <p style="margin-top: 16px;">Critically analyse the approach you took to ensure that your user story met the <strong>Definition of Ready</strong> as given by Bill Wake's <strong>INVEST checklist</strong> (see <a href="https://www.agilealliance.org/glossary/invest/" target="_blank" style="color: var(--cardiff-crimson);">https://www.agilealliance.org/glossary/invest/</a>).</p>
+
+                        <p style="margin-top: 16px;">You should include screenshots and a link to any issue that <strong>YOU</strong> created in GitLab that provides evidence of your approach in writing your chosen user story.</p>
+
+                        <h4 style="margin-top: 20px;">Critical Analysis Using INVEST Checklist:</h4>
+                        <p style="margin-bottom: 12px;">Address each of the following criteria in your analysis:</p>
                         <table style="margin-top: 12px;">
                             <thead>
                             <tr>
-                                <th>Criterion</th>
+                                <th style="width: 25%;">Criterion</th>
                                 <th>What to Address</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
                                 <td><strong>Independent</strong></td>
-                                <td>How the story avoids dependencies</td>
+                                <td>How the story avoids dependencies on other stories</td>
                             </tr>
                             <tr>
                                 <td><strong>Negotiable</strong></td>
-                                <td>How it prompts discussion without prescribing solution</td>
+                                <td>How it prompts discussion without prescribing the solution</td>
                             </tr>
                             <tr>
                                 <td><strong>Valuable</strong></td>
-                                <td>Clear value for specific user role</td>
+                                <td>Clear value for a specific user or stakeholder</td>
                             </tr>
                             <tr>
                                 <td><strong>Estimable</strong></td>
-                                <td>Why the team could estimate its size</td>
+                                <td>Why the team could estimate its size with confidence</td>
                             </tr>
                             <tr>
                                 <td><strong>Small</strong></td>
-                                <td>How it represents minimal viable increment</td>
+                                <td>How it represents the smallest viable increment</td>
                             </tr>
                             <tr>
                                 <td><strong>Testable</strong></td>
@@ -2509,84 +2598,83 @@
                             </tbody>
                         </table>
 
-                        <h4 style="margin-top: 16px;">Distinction-Level Criteria:</h4>
-                        <ul>
-                            <li>Comprehensive critical analysis of all INVEST dimensions</li>
-                            <li>Clear articulation of user value</li>
-                            <li>Well-structured acceptance criteria</li>
-                            <li>Evidence of stakeholder collaboration</li>
-                        </ul>
+                        <div class="callout callout-success" style="margin-top: 20px;">
+                            <div class="callout-title">Distinction-Level Criteria</div>
+                            <ul class="checklist">
+                                <li>Comprehensive critical analysis of all INVEST dimensions</li>
+                                <li>Clear articulation of user value with specific examples</li>
+                                <li>Well-structured acceptance criteria that are testable</li>
+                                <li>Evidence of stakeholder collaboration and input</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="expandable">
                 <div class="expandable-header">
-                    <span class="expandable-title">1c - Merge Request Evaluation (400 words)</span>
+                    <span class="expandable-title">1c - Evidence of Competence in Evaluating Merge Requests (1000 words)</span>
                     <span class="expandable-icon">▼</span>
                 </div>
                 <div class="expandable-content">
                     <div class="expandable-body">
-                        <h4>Requirements:</h4>
-                        <ul class="checklist">
-                            <li>Provide <strong>ONE best example</strong> of code review</li>
-                            <li>Demonstrate quality improvement advice</li>
-                            <li>Include screenshots and GitLab MR link</li>
+                        <p>Provide <strong>ONE example</strong> that best shows <strong>YOUR</strong> competence in providing a review for a Merge Request to improve the quality of another team member's source code.</p>
+
+                        <p style="margin-top: 16px;"><strong>Critically analyse</strong> the approach you took to code review and testing, which you used to evaluate whether this merge request met the team's <strong>Definition of Done</strong>. Do not just describe the steps followed—provide critical analysis of your approach.</p>
+
+                        <p style="margin-top: 16px;">You should include screenshots and link to the relevant Merge Request in GitLab which provides evidence of <strong>YOUR</strong> approach to evaluating the chosen Merge Request.</p>
+
+                        <h4 style="margin-top: 20px;">Critical Analysis Should Cover:</h4>
+                        <ul>
+                            <li><strong>Code Review Approach:</strong> How you understood the changes and identified improvements</li>
+                            <li><strong>Testing Methodology:</strong> How you verified functionality and tested edge cases</li>
+                            <li><strong>Definition of Done:</strong> Which checklist items you verified</li>
+                            <li><strong>Quality Improvements:</strong> Specific improvements and suggestions you provided</li>
                         </ul>
 
-                        <h4 style="margin-top: 16px;">Critical Analysis Should Cover:</h4>
-                        <ul>
-                            <li><strong>Code Review Approach:</strong> How you understood changes and identified improvements</li>
-                            <li><strong>Testing Methodology:</strong> How you verified functionality and edge cases</li>
-                            <li><strong>Definition of Done:</strong> Checklist items verified</li>
-                            <li><strong>Quality Improvements:</strong> Specific improvements suggested</li>
-                        </ul>
-
-                        <h4 style="margin-top: 16px;">Distinction-Level Criteria:</h4>
-                        <ul>
-                            <li>Thorough, systematic review approach</li>
-                            <li>Evidence of deep technical understanding</li>
-                            <li>Constructive, actionable feedback</li>
-                            <li>Consideration of maintainability</li>
-                        </ul>
+                        <div class="callout callout-success" style="margin-top: 20px;">
+                            <div class="callout-title">Distinction-Level Criteria</div>
+                            <ul class="checklist">
+                                <li>Thorough, systematic review approach</li>
+                                <li>Evidence of deep technical understanding</li>
+                                <li>Constructive, actionable feedback that improves quality</li>
+                                <li>Consideration of maintainability and long-term code quality</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="subsection">
-            <h3 class="subsection-title">Part 2: Reflection on Team Process (40%, 1500 words)</h3>
+            <h3 class="subsection-title">Part 2: Reflection on the Team's Process (40%, 1500 words)</h3>
 
             <div class="card">
                 <div class="card-title">Overview</div>
-                <p>Evidence-based reflection on the effectiveness of your team's project management approach.</p>
+                <p>Provide an evidence-based reflection on the team's approach to managing the project. Your reflection should include the following:</p>
                 <p style="margin-top: 8px;"><strong>Word Count:</strong> 1500 words</p>
                 <p><strong>Weight:</strong> 40% of module grade</p>
             </div>
 
             <div class="expandable">
                 <div class="expandable-header">
-                    <span class="expandable-title">Component 1: Scrum Implementation Evaluation</span>
+                    <span class="expandable-title">A. Critical Evaluation of Scrum Adherence</span>
                     <span class="expandable-icon">▼</span>
                 </div>
                 <div class="expandable-content">
                     <div class="expandable-body">
-                        <h4>Key Questions to Address:</h4>
-                        <ul>
-                            <li>How well did the team adhere to The Scrum Guide?</li>
-                            <li>What differences existed between your implementation and standard Scrum?</li>
-                            <li>How did these differences affect the project outcome?</li>
-                            <li>What worked well and what could be improved?</li>
-                        </ul>
+                        <p>A critical evaluation of your team's effectiveness in following <strong>Scrum</strong> as described in <strong>The Scrum Guide</strong> (<a href="https://www.scrumguides.org/scrum-guide.html" target="_blank" style="color: var(--cardiff-crimson);">https://www.scrumguides.org/scrum-guide.html</a>) by Ken Schwaber and Jeff Sutherland.</p>
 
-                        <h4 style="margin-top: 16px;">Scrum Elements to Evaluate:</h4>
+                        <p style="margin-top: 16px;">In particular, where there are <strong>differences between The Scrum Guide and your team's practice</strong>, reflect on how you believe this has affected the project.</p>
+
+                        <h4 style="margin-top: 20px;">Scrum Elements to Evaluate:</h4>
                         <ul>
-                            <li><strong>Sprint Planning:</strong> Effectiveness of planning sessions</li>
-                            <li><strong>Daily Scrums:</strong> Frequency, format, value derived</li>
-                            <li><strong>Sprint Review:</strong> Stakeholder engagement</li>
-                            <li><strong>Sprint Retrospective:</strong> Continuous improvement actions</li>
-                            <li><strong>Product Backlog:</strong> Prioritization and refinement</li>
-                            <li><strong>Roles:</strong> Product Owner, Scrum Master responsibilities</li>
+                            <li><strong>Sprint Planning:</strong> Effectiveness and structure of planning sessions</li>
+                            <li><strong>Daily Scrums:</strong> Frequency, format, and value derived</li>
+                            <li><strong>Sprint Review:</strong> Stakeholder engagement and feedback</li>
+                            <li><strong>Sprint Retrospective:</strong> Continuous improvement actions implemented</li>
+                            <li><strong>Product Backlog:</strong> Prioritization and refinement processes</li>
+                            <li><strong>Roles:</strong> Product Owner and Scrum Master responsibilities</li>
                         </ul>
                     </div>
                 </div>
@@ -2594,22 +2682,17 @@
 
             <div class="expandable">
                 <div class="expandable-header">
-                    <span class="expandable-title">Component 2: Source Code Workflow Evaluation</span>
+                    <span class="expandable-title">B. Reflection on Source Code Control Workflow</span>
                     <span class="expandable-icon">▼</span>
                 </div>
                 <div class="expandable-content">
                     <div class="expandable-body">
-                        <h4>Key Questions to Address:</h4>
-                        <ul>
-                            <li>How effective was your branch/merge request workflow?</li>
-                            <li>What did the team do well?</li>
-                            <li>What areas need improvement?</li>
-                        </ul>
+                        <p>A reflection on the team's effectiveness in using a workflow that uses <strong>branches and merge requests</strong> to manage source code control, identifying what your team did well and areas for improvement.</p>
 
-                        <h4 style="margin-top: 16px;">Workflow Elements to Evaluate:</h4>
+                        <h4 style="margin-top: 20px;">Workflow Elements to Evaluate:</h4>
                         <ul>
-                            <li><strong>Branching Strategy:</strong> Feature branches, naming conventions</li>
-                            <li><strong>Merge Requests:</strong> Review process and approval</li>
+                            <li><strong>Branching Strategy:</strong> Feature branches and naming conventions</li>
+                            <li><strong>Merge Requests:</strong> Review process and approval workflow</li>
                             <li><strong>Code Review Quality:</strong> Depth and learning outcomes</li>
                             <li><strong>CI/CD Integration:</strong> Automated testing and deployment</li>
                             <li><strong>Quality Gates:</strong> Definition of Done enforcement</li>
@@ -2618,70 +2701,97 @@
                 </div>
             </div>
 
+            <div class="expandable">
+                <div class="expandable-header">
+                    <span class="expandable-title">C. Evidence-Based Reflection Requirements</span>
+                    <span class="expandable-icon">▼</span>
+                </div>
+                <div class="expandable-content">
+                    <div class="expandable-body">
+                        <p>The reflection must be <strong>evidence-based</strong> through:</p>
+
+                        <ul style="margin-top: 16px;">
+                            <li>Effective <strong>references to the literature and/or best practices</strong> (with sources) to back up arguments</li>
+                            <li><strong>Insightful examples</strong> that reflect on the team's practice to critically evaluate the team's effectiveness</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
             <div class="card" style="margin-top: 16px;">
                 <div class="card-title">Distinction-Level Criteria</div>
                 <ul class="checklist">
-                    <li>Critical evaluation with insightful examples</li>
-                    <li>Clear evidence of reflection and learning</li>
-                    <li>Reference to relevant literature and best practices</li>
-                    <li>Balanced assessment of strengths and weaknesses</li>
-                    <li>Actionable recommendations for improvement</li>
-                    <li>Clear links between process and outcomes</li>
+                    <li>Exceptionally insightful and original evaluation of Scrum adherence</li>
+                    <li>Deep critical awareness of how deviations influenced project outcomes</li>
+                    <li>Nuanced reflection on feature branching and merge request practices</li>
+                    <li>Outstanding, critical use of high-quality academic literature and best practices</li>
+                    <li>References go beyond standard sources</li>
                 </ul>
             </div>
         </div>
 
         <div class="subsection">
-            <h3 class="subsection-title">Part 3: Risk Register (20%, max 2 pages)</h3>
+            <h3 class="subsection-title">Part 3: Risk Register (20%, Maximum 2 Pages)</h3>
 
             <div class="card">
                 <div class="card-title">Overview</div>
-                <p>Develop a risk register for the scenario where your client decides to move to a full solution based on your prototype.</p>
-                <p style="margin-top: 8px;"><strong>Format:</strong> Table with risk descriptions, likelihood, impact, and countermeasures</p>
-                <p><strong>Maximum Length:</strong> 2 pages</p>
+                <p>Develop a risk register for the scenario where your client decides to move forward with the project to develop and release a full working solution.</p>
+                <p style="margin-top: 16px;"><strong>Format:</strong> Professional table with risk descriptions, likelihood, impact, and countermeasures</p>
+                <p><strong>Maximum Length:</strong> 2 pages (strictly enforced)</p>
                 <p><strong>Weight:</strong> 20% of module grade</p>
             </div>
 
             <div class="card">
+                <div class="card-title">Your Risk Register Must Provide for Each Risk:</div>
+                <ul>
+                    <li><strong>Risk description:</strong> Clear, project-specific description</li>
+                    <li><strong>Likelihood:</strong> Low, Medium, or High qualitative score</li>
+                    <li><strong>Impact:</strong> Low, Medium, or High qualitative score</li>
+                    <li><strong>Countermeasure:</strong> How the risk should be controlled</li>
+                </ul>
+            </div>
+
+            <div class="card">
                 <div class="card-title">Required Risk Categories</div>
-                <p>Your risk register must cover the following categories:</p>
+                <p style="margin-bottom: 16px;">Your risk register must cover the following <strong>five categories comprehensively</strong>:</p>
+
                 <div class="grid-2" style="margin-top: 16px;">
-                    <div style="background: #E3F2FD; padding: 16px; border-radius: 8px;">
-                        <strong>Legal Issues</strong>
-                        <ul style="margin-top: 8px; font-size: 13px;">
+                    <div style="background: #E3F2FD; padding: 16px; border-radius: 8px; border: 1px solid var(--border-grey);">
+                        <h4 style="color: var(--cardiff-crimson); margin-bottom: 8px;">1. Legal Issues</h4>
+                        <ul style="font-size: 13px;">
                             <li>GDPR compliance</li>
                             <li>Accessibility regulations</li>
                             <li>Contract liability</li>
                         </ul>
                     </div>
-                    <div style="background: #FFF3E0; padding: 16px; border-radius: 8px;">
-                        <strong>Ethical Issues</strong>
-                        <ul style="margin-top: 8px; font-size: 13px;">
+                    <div style="background: #FFF3E0; padding: 16px; border-radius: 8px; border: 1px solid var(--border-grey);">
+                        <h4 style="color: var(--cardiff-crimson); margin-bottom: 8px;">2. Ethical Issues</h4>
+                        <ul style="font-size: 13px;">
                             <li>Privacy concerns</li>
                             <li>Algorithmic bias</li>
                             <li>Digital exclusion</li>
                         </ul>
                     </div>
-                    <div style="background: #E8F5E9; padding: 16px; border-radius: 8px;">
-                        <strong>Social Issues</strong>
-                        <ul style="margin-top: 8px; font-size: 13px;">
+                    <div style="background: #E8F5E9; padding: 16px; border-radius: 8px; border: 1px solid var(--border-grey);">
+                        <h4 style="color: var(--cardiff-crimson); margin-bottom: 8px;">3. Social Issues</h4>
+                        <ul style="font-size: 13px;">
                             <li>User impact</li>
                             <li>Accessibility</li>
                             <li>Environmental impact</li>
                         </ul>
                     </div>
-                    <div style="background: #F3E5F5; padding: 16px; border-radius: 8px;">
-                        <strong>Professional Issues</strong>
-                        <ul style="margin-top: 8px; font-size: 13px;">
+                    <div style="background: #F3E5F5; padding: 16px; border-radius: 8px; border: 1px solid var(--border-grey);">
+                        <h4 style="color: var(--cardiff-crimson); margin-bottom: 8px;">4. Professional Issues</h4>
+                        <ul style="font-size: 13px;">
                             <li>Competence gaps</li>
                             <li>Conflicts of interest</li>
                             <li>Accountability</li>
                         </ul>
                     </div>
                 </div>
-                <div style="background: #FFEBEE; padding: 16px; border-radius: 8px; margin-top: 16px;">
-                    <strong>Security Issues</strong>
-                    <ul style="margin-top: 8px; font-size: 13px; column-count: 2;">
+                <div style="background: #FFEBEE; padding: 16px; border-radius: 8px; margin-top: 16px; border: 1px solid var(--border-grey);">
+                    <h4 style="color: var(--cardiff-crimson); margin-bottom: 8px;">5. Security Issues</h4>
+                    <ul style="font-size: 13px; column-count: 2;">
                         <li>Data breaches</li>
                         <li>Injection attacks</li>
                         <li>Authentication failures</li>
@@ -2692,74 +2802,160 @@
 
             <div class="card">
                 <div class="card-title">Risk Register Format</div>
+                <p style="margin-bottom: 12px;">Present your risk register in a professional table format with columns for:</p>
                 <table>
                     <thead>
                     <tr>
-                        <th>Column</th>
-                        <th>Description</th>
-                        <th>Example</th>
+                        <th>Risk ID</th>
+                        <th>Risk Description</th>
+                        <th>Category</th>
+                        <th>Likelihood</th>
+                        <th>Impact</th>
+                        <th>Risk Level</th>
+                        <th>Countermeasure</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td><strong>Risk Description</strong></td>
-                        <td>Clear, project-specific description</td>
+                        <td>1</td>
                         <td>User passwords stored in plain text</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Likelihood</strong></td>
-                        <td>Low / Medium / High</td>
+                        <td>Security</td>
                         <td>High</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Impact</strong></td>
-                        <td>Low / Medium / High</td>
                         <td>High</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Countermeasure</strong></td>
-                        <td>Specific risk control approach</td>
+                        <td>CRITICAL</td>
                         <td>Implement bcrypt password hashing, enforce strong password policy, enable MFA</td>
                     </tr>
                     </tbody>
                 </table>
             </div>
 
-            <div class="callout callout-warning">
-                <div class="callout-title">Key Requirements</div>
-                <ul>
+            <div class="card">
+                <div class="card-title">Requirements for Quality</div>
+                <ul class="checklist">
                     <li>Risks must be <strong>project-specific</strong>, not generic</li>
                     <li>Countermeasures must be <strong>actionable and detailed</strong></li>
                     <li>Cover <strong>all five risk categories</strong> comprehensively</li>
-                    <li>Stay within <strong>2-page limit</strong></li>
+                    <li><strong>Stay within 2-page limit</strong> (this is strictly enforced)</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Distinction-Level Criteria</div>
+                <ul class="checklist">
+                    <li>Exceptionally insightful, thorough, critical assessment of important risks</li>
+                    <li>Clear, highly appropriate, well-justified countermeasures</li>
+                    <li>Excellent alignment of risks and countermeasures to specific project context</li>
+                    <li>Strong understanding of risk impact</li>
                 </ul>
             </div>
         </div>
 
         <div class="subsection">
-            <h3 class="subsection-title">Submission Details</h3>
+            <h3 class="subsection-title">Submission Deadline &amp; Instructions</h3>
 
-            <div class="grid-2">
-                <div class="card">
-                    <div class="card-title">Format Requirements</div>
-                    <ul>
-                        <li><strong>Document Type:</strong> Reflective portfolio</li>
-                        <li><strong>Evidence:</strong> Must include working links</li>
-                        <li><strong>Presentation:</strong> Professional formatting</li>
-                        <li><strong>Screenshots:</strong> Clear and readable</li>
-                        <li><strong>Word Counts:</strong> Strictly enforced</li>
-                    </ul>
+            <!-- SUBMISSION DEADLINE SECTION -->
+            <div class="card" style="background-color: #FFF3CD; border: 2px solid #856404; border-left: 6px solid #856404; margin-bottom: 32px;">
+                <div style="display: flex; align-items: center; margin-bottom: 16px;">
+                    <span style="font-size: 32px; margin-right: 12px;">📅</span>
+                    <h3 style="color: #856404; margin: 0; font-size: 22px; font-weight: 700;">SUBMISSION DEADLINE</h3>
                 </div>
 
-                <div class="card">
-                    <div class="card-title">Repository Access</div>
-                    <ul class="checklist">
-                        <li>GitLab maintainer access for team and lecturers</li>
-                        <li>Organized Microsoft Teams space</li>
-                        <li>Evidence form in "For Review" folder</li>
-                        <li>Weekly updates maintained</li>
-                    </ul>
+                <div style="background-color: #FFFFFF; padding: 20px; border-radius: 8px; border: 1px solid #856404; margin-bottom: 16px;">
+                    <p style="font-size: 18px; font-weight: 700; color: #856404; margin-bottom: 8px;">
+                        📅 <strong>Submission Deadline: 15th January 2026 at 9:00 AM</strong>
+                    </p>
                 </div>
+
+                <div style="display: flex; align-items: flex-start; padding: 16px; background-color: rgba(255, 255, 255, 0.7); border-radius: 8px; margin-bottom: 16px;">
+                    <span style="font-size: 24px; margin-right: 12px; flex-shrink: 0;">⚠️</span>
+                    <div>
+                        <p style="font-weight: 700; color: #856404; margin-bottom: 8px; font-size: 16px;">IMPORTANT:</p>
+                        <p style="color: #856404; margin: 0;">Please check Learning Central for the most up-to-date submission dates and any potential changes.</p>
+                    </div>
+                </div>
+
+                <div style="background-color: rgba(255, 255, 255, 0.7); padding: 20px; border-radius: 8px;">
+                    <h4 style="color: #856404; margin-bottom: 12px; font-size: 16px; font-weight: 700;">How to find the official submission dates:</h4>
+                    <ol style="margin: 0; padding-left: 24px; color: #856404;">
+                        <li style="margin-bottom: 8px;">Go to Learning Central</li>
+                        <li style="margin-bottom: 8px;">Navigate to: <strong>Organisations</strong> → <strong>COMSC-SCHOOL</strong></li>
+                        <li style="margin-bottom: 8px;">Select: <strong>Assessment and Feedback</strong></li>
+                        <li style="margin-bottom: 8px;">Check: <strong>COMSC Assessment Calendar 2025-26</strong></li>
+                    </ol>
+                    <p style="margin-top: 16px; color: #856404; font-style: italic; margin-bottom: 0;">
+                        The calendar will show the most current submission deadlines for all COMSC modules.
+                    </p>
+                </div>
+            </div>
+            <!-- END SUBMISSION DEADLINE SECTION -->
+
+            <div class="card">
+                <div class="card-title">Where to Submit</div>
+                <p>All assessment files should be submitted in the <strong>'Assessment &amp; Feedback'</strong> folder on Learning Central.</p>
+
+                <div class="callout callout-error" style="margin-top: 16px;">
+                    <div class="callout-title">⚠️ Before Submission</div>
+                    <p>You <strong>MUST</strong> complete and submit the <strong>'Assessment Coversheet'</strong> form. Further instructions are provided in the module's 'Assessment &amp; Feedback' folder on Learning Central.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Your Submission Should Contain</div>
+                <ul style="font-size: 14px;">
+                    <li><strong>Reflective Portfolio (PDF file):</strong> <code>[StudentNumber]ReflectivePortfolio.pdf</code></li>
+                    <li><strong>Evidence of Contribution Form (Word file):</strong> <code>[StudentNumber]ContributionEvidence.docx</code></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Technical Issues</div>
+                <p><strong>If unable to submit:</strong></p>
+                <ul style="margin-top: 12px;">
+                    <li>Email your submission to the module leader <strong>and</strong> <code>comsc-submissions@cardiff.ac.uk</code></li>
+                </ul>
+
+                <p style="margin-top: 16px;"><strong>If the issue is with Cardiff University systems:</strong></p>
+                <ul style="margin-top: 8px;">
+                    <li>Also report to IT Support: <code>it-support@cardiff.ac.uk</code> or <strong>+44 (0)29 2251 1111</strong></li>
+                </ul>
+
+                <div class="callout callout-info" style="margin-top: 16px;">
+                    <div class="callout-title">Note</div>
+                    <p>Staff reserve the right to invite students to a meeting to discuss coursework submissions.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <h3 class="subsection-title">Help and Support</h3>
+
+            <div class="card">
+                <div class="card-title">Where to Get Help</div>
+
+                <table>
+                    <tbody>
+                    <tr>
+                        <td style="width: 35%;"><strong>General Questions</strong></td>
+                        <td>Ask on the <strong>CMT651 Agile Software Development Teams channel</strong> in the MSc (2025-26) Software Engineering Teams Space</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Specific Queries</strong></td>
+                        <td>Email or message lecturers on Teams</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Formative Feedback</strong></td>
+                        <td>Available during weekly Team Review Meetings (weeks 8-11)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Q&amp;A Session</strong></td>
+                        <td>There will be a Question-and-Answer session the week prior to submission</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Feedback Return</strong></td>
+                        <td>Marks and feedback will be returned via Learning Central in accordance with the university's Academic Feedback Policy. Check the COMSC Assessment Calendar 2025-26 for feedback return dates.</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
@@ -2775,13 +2971,13 @@
             <h3 class="subsection-title">ISO 31000 &amp; Risk Management</h3>
             <div class="card">
                 <p style="margin-bottom: 16px;"><strong>Institute of Risk Management (2018)</strong> 'Standard Deviations: A Risk Practitioners Guide to ISO 31000 – 2018' (v2), London: The Institute of Risk Management.</p>
-                <p style="font-size: 13px; color: var(--dark-charcoal); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Comprehensive guide to ISO 31000:2018 including risk management principles, framework components, and implementation guidance. Essential reading for understanding enterprise risk management.</p>
+                <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Comprehensive guide to ISO 31000:2018 including risk management principles, framework components, and implementation guidance. Essential reading for understanding enterprise risk management.</p>
 
                 <p style="margin-bottom: 16px;"><strong>ISO (2018)</strong> ISO 31000:2018 Risk management – Guidelines. Geneva: International Organization for Standardization.</p>
-                <p style="font-size: 13px; color: var(--dark-charcoal); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">The international standard for risk management providing principles, a framework, and a process for managing risk.</p>
+                <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">The international standard for risk management providing principles, a framework, and a process for managing risk.</p>
 
                 <p style="margin-bottom: 16px;"><strong>ISO (2022)</strong> ISO 27005:2022 Information Security, Cybersecurity and Privacy Protection – Guidance on Managing Information Security Risks. Geneva: International Organization for Standardization.</p>
-                <p style="font-size: 13px; color: var(--dark-charcoal); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Provides guidelines for managing information security risks aligned with ISO 27001 (Information Security Management Systems).</p>
+                <p style="font-size: 13px; color: var(--color-text-secondary); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Provides guidelines for managing information security risks aligned with ISO 27001 (Information Security Management Systems).</p>
             </div>
         </div>
 
@@ -2789,13 +2985,13 @@
             <h3 class="subsection-title">Information Security &amp; OWASP</h3>
             <div class="card">
                 <p style="margin-bottom: 16px;"><strong>OWASP Foundation (2021)</strong> 'OWASP Top 10 2021 – The Ten Most Critical Web Application Security Risks'. Available at: <a href="https://owasp.org/Top10/" target="_blank" style="color: var(--cardiff-crimson);">https://owasp.org/Top10/</a></p>
-                <p style="font-size: 13px; color: var(--dark-charcoal); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Regularly updated list of the most critical web application security risks. Essential reference for understanding common vulnerabilities and mitigation strategies.</p>
+                <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Regularly updated list of the most critical web application security risks. Essential reference for understanding common vulnerabilities and mitigation strategies.</p>
 
                 <p style="margin-bottom: 16px;"><strong>OWASP Foundation (2022)</strong> 'API Security Top 10'. Available at: <a href="https://owasp.org/www-project-api-security/" target="_blank" style="color: var(--cardiff-crimson);">https://owasp.org/www-project-api-security/</a></p>
-                <p style="font-size: 13px; color: var(--dark-charcoal); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Security risks specific to APIs and services, complementing the web application security guidance.</p>
+                <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Security risks specific to APIs and services, complementing the web application security guidance.</p>
 
                 <p style="margin-bottom: 16px;"><strong>National Institute of Standards and Technology (NIST) (2019)</strong> 'Framework for Improving Critical Infrastructure Cybersecurity, Version 1.1'. Available at: <a href="https://www.nist.gov/cyberframework" target="_blank" style="color: var(--cardiff-crimson);">https://www.nist.gov/cyberframework</a></p>
-                <p style="font-size: 13px; color: var(--dark-charcoal); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Comprehensive framework for managing cybersecurity risk and improving organizational resilience.</p>
+                <p style="font-size: 13px; color: var(--color-text-secondary); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Comprehensive framework for managing cybersecurity risk and improving organizational resilience.</p>
             </div>
         </div>
 
@@ -2803,13 +2999,13 @@
             <h3 class="subsection-title">Quality Assurance &amp; Agile</h3>
             <div class="card">
                 <p style="margin-bottom: 16px;"><strong>Schwaber, K. and Sutherland, J. (2020)</strong> 'The Scrum Guide: The Definitive Guide to Scrum: The Rules of the Game'. Available at: <a href="https://scrumguides.org/" target="_blank" style="color: var(--cardiff-crimson);">https://scrumguides.org/</a></p>
-                <p style="font-size: 13px; color: var(--dark-charcoal); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Official guide to Scrum methodology, including sprints, roles, ceremonies, and best practices for Agile development.</p>
+                <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Official guide to Scrum methodology, including sprints, roles, ceremonies, and best practices for Agile development.</p>
 
                 <p style="margin-bottom: 16px;"><strong>Beck, K., Beedle, M., van Bennekum, A. et al. (2001)</strong> 'Manifesto for Agile Software Development'. Available at: <a href="https://agilemanifesto.org/" target="_blank" style="color: var(--cardiff-crimson);">https://agilemanifesto.org/</a></p>
-                <p style="font-size: 13px; color: var(--dark-charcoal); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Foundational principles and values underlying Agile software development practices.</p>
+                <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Foundational principles and values underlying Agile software development practices.</p>
 
                 <p style="margin-bottom: 16px;"><strong>Atlassian (2023)</strong> 'Definition of Done: Agile software development'. Available at: <a href="https://www.atlassian.com/agile/scrum/definition-of-done" target="_blank" style="color: var(--cardiff-crimson);">https://www.atlassian.com/agile/scrum/definition-of-done</a></p>
-                <p style="font-size: 13px; color: var(--dark-charcoal); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Practical guidance on creating and maintaining Definition of Done for development teams.</p>
+                <p style="font-size: 13px; color: var(--color-text-secondary); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Practical guidance on creating and maintaining Definition of Done for development teams.</p>
             </div>
         </div>
 
@@ -2817,16 +3013,16 @@
             <h3 class="subsection-title">Legal Framework &amp; Compliance</h3>
             <div class="card">
                 <p style="margin-bottom: 16px;"><strong>UK Parliament (1990)</strong> 'Computer Misuse Act 1990' (c.18). London: HMSO. Available at: <a href="https://www.legislation.gov.uk/ukpga/1990/18" target="_blank" style="color: var(--cardiff-crimson);">https://www.legislation.gov.uk/ukpga/1990/18</a></p>
-                <p style="font-size: 13px; color: var(--dark-charcoal); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">UK legislation establishing criminal offenses related to unauthorized access to computer systems and data.</p>
+                <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">UK legislation establishing criminal offenses related to unauthorized access to computer systems and data.</p>
 
                 <p style="margin-bottom: 16px;"><strong>EUR-Lex (2016)</strong> 'Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data' (General Data Protection Regulation). Available at: <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" style="color: var(--cardiff-crimson);">https://eur-lex.europa.eu/eli/reg/2016/679/oj</a></p>
-                <p style="font-size: 13px; color: var(--dark-charcoal); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">EU regulation establishing requirements for data protection and privacy, directly applicable in UK until Brexit and largely retained in UK law.</p>
+                <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">EU regulation establishing requirements for data protection and privacy, directly applicable in UK until Brexit and largely retained in UK law.</p>
 
                 <p style="margin-bottom: 16px;"><strong>UK Parliament (2018)</strong> 'Data Protection Act 2018' (c.12). London: HMSO. Available at: <a href="https://www.legislation.gov.uk/ukpga/2018/12" target="_blank" style="color: var(--cardiff-crimson);">https://www.legislation.gov.uk/ukpga/2018/12</a></p>
-                <p style="font-size: 13px; color: var(--dark-charcoal); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">UK legislation implementing GDPR requirements and establishing data protection framework.</p>
+                <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">UK legislation implementing GDPR requirements and establishing data protection framework.</p>
 
                 <p style="margin-bottom: 16px;"><strong>HM Courts &amp; Tribunals Service (2024)</strong> 'Crown Prosecution Service – Guidance on Computer Misuse Act Offenses'. Available at: <a href="https://www.cps.gov.uk/" target="_blank" style="color: var(--cardiff-crimson);">https://www.cps.gov.uk/</a></p>
-                <p style="font-size: 13px; color: var(--dark-charcoal); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Official prosecution guidance on computer crime legislation and enforcement.</p>
+                <p style="font-size: 13px; color: var(--color-text-secondary); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Official prosecution guidance on computer crime legislation and enforcement.</p>
             </div>
         </div>
 
@@ -2834,13 +3030,13 @@
             <h3 class="subsection-title">Professional Standards &amp; Ethics</h3>
             <div class="card">
                 <p style="margin-bottom: 16px;"><strong>BCS (2022)</strong> 'Code of Conduct for BCS Members'. Swindon: The British Computer Society. Available at: <a href="https://www.bcs.org/membership-and-registrations/member-conduct/bcs-code-of-conduct/" target="_blank" style="color: var(--cardiff-crimson);">https://www.bcs.org/membership-and-registrations/member-conduct/bcs-code-of-conduct/</a></p>
-                <p style="font-size: 13px; color: var(--dark-charcoal); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Professional code establishing ethical standards and professional responsibilities for UK computing professionals.</p>
+                <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Professional code establishing ethical standards and professional responsibilities for UK computing professionals.</p>
 
                 <p style="margin-bottom: 16px;"><strong>ACM (Association for Computing Machinery) (2018)</strong> 'Code of Ethics and Professional Conduct'. Available at: <a href="https://www.acm.org/code-of-ethics" target="_blank" style="color: var(--cardiff-crimson);">https://www.acm.org/code-of-ethics</a></p>
-                <p style="font-size: 13px; color: var(--dark-charcoal); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">International ethical framework and professional responsibilities for computing professionals, addressing public interest, professional competence, and integrity.</p>
+                <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">International ethical framework and professional responsibilities for computing professionals, addressing public interest, professional competence, and integrity.</p>
 
                 <p style="margin-bottom: 16px;"><strong>IEEE Computer Society (2018)</strong> 'Software Engineering Code of Ethics and Professional Practice'. Available at: <a href="https://www.computer.org/" target="_blank" style="color: var(--cardiff-crimson);">https://www.computer.org/</a></p>
-                <p style="font-size: 13px; color: var(--dark-charcoal); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Professional ethical guidelines specific to software engineers and software development practices.</p>
+                <p style="font-size: 13px; color: var(--color-text-secondary); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Professional ethical guidelines specific to software engineers and software development practices.</p>
             </div>
         </div>
 
@@ -2848,13 +3044,13 @@
             <h3 class="subsection-title">Accessibility &amp; Web Standards</h3>
             <div class="card">
                 <p style="margin-bottom: 16px;"><strong>W3C (Web Accessibility Initiative) (2023)</strong> 'Web Content Accessibility Guidelines (WCAG) 2.1'. Available at: <a href="https://www.w3.org/WAI/WCAG21/quickref/" target="_blank" style="color: var(--cardiff-crimson);">https://www.w3.org/WAI/WCAG21/quickref/</a></p>
-                <p style="font-size: 13px; color: var(--dark-charcoal); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">International guidelines for creating accessible web content for people with disabilities. Essential for inclusive software design.</p>
+                <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">International guidelines for creating accessible web content for people with disabilities. Essential for inclusive software design.</p>
 
                 <p style="margin-bottom: 16px;"><strong>UK Equality Act (2010)</strong> 'Equality Act 2010: Public Sector Equality Duty'. Available at: <a href="https://www.legislation.gov.uk/ukpga/2010/15" target="_blank" style="color: var(--cardiff-crimson);">https://www.legislation.gov.uk/ukpga/2010/15</a></p>
-                <p style="font-size: 13px; color: var(--dark-charcoal); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">UK legislation requiring public sector organizations to consider equality and accessibility in service delivery.</p>
+                <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">UK legislation requiring public sector organizations to consider equality and accessibility in service delivery.</p>
 
                 <p style="margin-bottom: 16px;"><strong>GOV.UK Digital Service Standard (2024)</strong> 'Accessibility checklist'. Available at: <a href="https://www.gov.uk/guidance/accessibility-checklist" target="_blank" style="color: var(--cardiff-crimson);">https://www.gov.uk/guidance/accessibility-checklist</a></p>
-                <p style="font-size: 13px; color: var(--dark-charcoal); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Practical UK government guidance on implementing accessibility requirements in digital services.</p>
+                <p style="font-size: 13px; color: var(--color-text-secondary); padding-left: 16px; border-left: 3px solid var(--cardiff-crimson);">Practical UK government guidance on implementing accessibility requirements in digital services.</p>
             </div>
         </div>
 
